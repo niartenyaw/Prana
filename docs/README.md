@@ -53,6 +53,8 @@ All sections will be performed in the following order:
 ## Future features
 * Comments
 * Mailer for invites
+* Drag and drop ordering
+* Motion
 * Calendar
 * Attachments/Files
 * Follow a task

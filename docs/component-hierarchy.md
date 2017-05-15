@@ -2,7 +2,7 @@
 
 * **App**
 
-  * **UserAuthContainer**
+  * **AuthRoute**
 
   * **TopNavContainer**
 
