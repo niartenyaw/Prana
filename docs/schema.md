@@ -1,7 +1,6 @@
 # Schema
 
 ### Users
-* `id`
 * `email`
 * `name`
 * `created_at`
@@ -12,7 +11,8 @@
 * `created_at`
 * `modified_at`
 
-### TeamMemberships (join table)
+### TeamMemberships
+(join table)
 * `user_id`
 * `team_id`
 * `created_at`
@@ -20,11 +20,12 @@
 
 ### Projects
 * `owner_id`
-* `title`
+* `name`
 * `created_at`
 * `modified_at`
 
-### ProjectMemberships (join table)
+### ProjectMemberships
+(join table)
 * `user_id`
 * `project_id`
 * `created_at`
@@ -32,8 +33,8 @@
 
 ### Tasks
 * `title`
-* `Description`
-* `Finished`
+* `description`
+* `finished`
 * `creator_id`
 * `assignee_id`
 * `project_id`

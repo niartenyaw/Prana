@@ -47,6 +47,9 @@ All sections will be performed in the following order:
 ### Tasks (4 days)
 **Objective:** Create and edit tasks; assign users in project to task; view tasks in project view, profile view, and dashboard; completion button. TaskDetail view.
 
+## Production README (0.5 days)
+**Objective:** Complete the production `README`
+
 ## Future features
 * Comments
 * Mailer for invites
