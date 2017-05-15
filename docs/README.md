@@ -5,12 +5,13 @@
 [Prana](www.google.com)
 
 ## Minimum Viable Project
-* Create, login, guest/demo login
+* Signup, guest/demo login
 * Production README
 * Hosting on Heroku
 * User Dashboard
 * Projects
 * Tasks
+* Comments
 * Teams
 * Profile View of other users
 
@@ -26,12 +27,29 @@ For each feature:
 * [Schema](./schema.md)
 * [API Endpoints](./api-endpoints.md)
 
+## Timeline
+All sections will be performed in the following order:
 
+`DB -> model -> controller -> JSON views -> API -> Actions -> Reducer -> Container -> Presentational -> CSS`
+
+### User Auth
+Time: 2 days
+
+### Projects
+Time: 1 day
+
+### Teams
+Time: 1 day
+
+### Tasks
+Time: 3 days
+
+### Comments
+Time: 3 days
 
 ## Future features
 * Mailer
 * Calendar
-* Comments
 * Attachments/Files
 * Follow a task
 * Tagging users in comments
