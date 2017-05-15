@@ -31,6 +31,8 @@ For each feature:
 ## Future features
 * Calendar
 * Comments
-* Follow a task
 * Attachments/Files
+* Follow a task
 * Tagging users in comments
+* Likes
+* Tags
