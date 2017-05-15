@@ -14,5 +14,4 @@
 
       * **TaskItemContainer** (always displays title. sometimes project, assignee if applicable. Allows for click-in editing)
 
-
-  * **TaskDetailContainer** (displays details of a task. allows click-in editing for title and description)
+    * **TaskDetailContainer** (displays details of a task. allows click-in editing for title and description)
