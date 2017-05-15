@@ -29,6 +29,7 @@ For each feature:
 
 
 ## Future features
+* Mailer
 * Calendar
 * Comments
 * Attachments/Files
