@@ -9,8 +9,10 @@
 
   * **SideNavContainer** (includes list of projects, list of users on current project)
 
-  * **TaskIndexContainer** (list of tasks)
+  * **MainContainer**
+    * **TaskIndexContainer** (list of tasks)
 
-    * **TaskItemContainer** (always displays title. sometimes project, assignee if applicable. Allows for click-in editing)
+      * **TaskItemContainer** (always displays title. sometimes project, assignee if applicable. Allows for click-in editing)
 
-    * **TaskDetailContainer** (displays details of a task. allows click-in editing for title and description)
+
+  * **TaskDetailContainer** (displays details of a task. allows click-in editing for title and description)
