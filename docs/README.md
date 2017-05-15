@@ -32,20 +32,20 @@ All sections will be performed in the following order:
 
 `DB -> model -> controller -> JSON views -> API -> Actions -> Reducer -> Container -> Presentational -> CSS`
 
-### User Auth
-Time: 2 days
+### User Auth (2 days)
+**Objective:** Sign up, log in forms, log out button. Simple dashboard and profile views.
 
-### Projects
-Time: 1 day
+### Projects (1 day)
+**Objective:** Create and edit project forms, add others to projects, project detail view, projects in side nav bar.
 
-### Teams
-Time: 1 day
+### Teams (1 day)
+**Objective:** Create and edit teams forms, team detail view, projects in side nav bar.
 
-### Tasks
-Time: 4 days
+### Tasks (4 days)
+**Objective:** Create and edit tasks; assign users in project to task; view tasks in project view, profile view, and dashboard; completion button. TaskDetail view.
 
-### Comments
-Time: 3 days
+### Comments (2 days)
+**Objective:** Create and edit comments; view comments in TaskDetail view.
 
 ## Future features
 * Mailer
