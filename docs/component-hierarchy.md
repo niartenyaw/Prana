@@ -2,6 +2,8 @@
 
 * **App**
 
+  * **UserAuthContainer**
+
   * **TopNavContainer**
 
     * **SearchBarContainer**
