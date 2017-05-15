@@ -33,7 +33,10 @@ All sections will be performed in the following order:
 `DB -> model -> controller -> JSON views -> API -> Actions -> Reducer -> Container -> Presentational -> CSS`
 
 ### User Auth (2 days)
-**Objective:** Sign up, log in forms, log out button. Simple dashboard and profile views.
+**Objective:** Sign up, log in forms, log out button.
+
+### Dashboard and Profile User Views (2 days)
+**Objective:** Main view after login page.
 
 ### Projects (1 day)
 **Objective:** Create and edit project forms, add others to projects, project detail view, projects in side nav bar.
@@ -44,14 +47,12 @@ All sections will be performed in the following order:
 ### Tasks (4 days)
 **Objective:** Create and edit tasks; assign users in project to task; view tasks in project view, profile view, and dashboard; completion button. TaskDetail view.
 
-### Comments (2 days)
-**Objective:** Create and edit comments; view comments in TaskDetail view.
-
 ## Future features
-* Mailer
+* Comments
+* Mailer for invites
 * Calendar
 * Attachments/Files
 * Follow a task
-* Tagging users in comments
 * Likes
 * Tags
+* Tagging users in comments

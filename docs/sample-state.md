@@ -1,36 +1,85 @@
+# Sample State
+
+The following is an example of a full state.
+
+```js
 {
+  session: {
+    // The user that is signed in
+    currentUser: {
+      email: "this@this.com",
+      name: "First Last"
+    },
+    // Any errors that need to be displayed
+    errors: []
+  },
+
+  teams: {
+    // All teams the currentUser is a part of
+    all_teams: {
+      1: {
+        name: "Team 1",
+        id: 1
+      }
+    },
+    // Current team being viewed
+    currentTeam: {
+      name: "Team 1",
+      id: 1
+    }
+  },
+
+  users: {
+    // All Users in the currentTeam
+    all_users: {
+      1: {
+        email: "this@this.com",
+        name: "First Last"
+      }
+    },
+    // Current user profile being viewed (only other users)
+    userDetail: {
+      email: "this@this.com",
+      name: "First Last"
+    }
+  },
+
   projects: {
-    1: {
+    // All projects for currentTeam
+    all_projects: {
+      1: {
+        title: "title",
+        id: 1
+      }
+    },
+    // Current project being viewed
+    projectDetail: {
       title: "title",
-      user_ids: [1, 3, 4],
-      task_ids: [1]
+      id: 1
     }
   }
 
   tasks: {
-    1: {
+    // All tasks connected to projectDetail
+    all_tasks: {
+      1: {
+        title: "title",
+        completed: false,
+        project_id: 1,
+        assignee_id: 1
+      }
+    },
+    // Current task being viewed
+    taskDetail: {
       title: "title",
-      completed: false,
+      description: "description",
+      creator_id: 1,
+      assignee_id: 1,
       project_id: 1,
-      assignee_id: 1
+      completed: false,
+      created_at: DATE,
+      assigned_at: DATE
     }
-  }
-  
-  users: {
-    1: {
-      email: "this@this.com",
-      name: "First Last"
-    }
-  }
-
-  taskDetail: {
-    title: "title",
-    description: "description",
-    creator_id: 1,
-    assignee_id: 1,
-    project_id: 1,
-    completed: false,
-    created_at: DATE,
-    assigned_at: DATE
   }
 }
+```
