@@ -33,26 +33,29 @@ class SessionForm extends React.Component {
     const path = this.props.match.path
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
-      <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
-        {(path === "/signup") ? (<label>Name
-          <input type="text"
-            value={this.state.name}
-            onChange={this.handleChange("name")} ></input>
-        </label>) : (
-          ""
-        )}
-        <label>Email
-          <input type="text"
-            value={this.state.email}
-            onChange={this.handleChange("email")} ></input>
-        </label>
-        <label>Password
-          <input type="password"
-            value={this.state.password}
-            onChange={this.handleChange("password")} ></input>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="form-container">
+        <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
+          <h1 id="form-title">{text}</h1>
+          {(path === "/signup") ? (<label>Name
+            <input type="text"
+              value={this.state.name}
+              onChange={this.handleChange("name")} ></input>
+          </label>) : (
+            ""
+          )}
+          <label>Email
+            <input type="text"
+              value={this.state.email}
+              onChange={this.handleChange("email")} ></input>
+          </label>
+          <label>Password
+            <input type="password"
+              value={this.state.password}
+              onChange={this.handleChange("password")} ></input>
+          </label>
+          <input className="button" type="submit" value={text} />
+        </form>
+      </div>
     );
   }
 };

@@ -1,0 +1,74 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+ul.session-links {
+  display: flex;
+  margin-right: 10px;
+  li {
+    margin: 0 7px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid $dark-blue;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: white;
+  color: $dark-blue;
+}
+.button:hover, .session-links a:hover {
+  background-color: $dark-blue;
+  color: white;
+  transform: color .4s ease-out,border-color .4s ease-out;
+}
+
+.form-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 90%;
+
+  .session-form {
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: $light-green;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    input[type="text"] {
+      border: 1px solid #FFFFFF;
+      border-radius: 7px;
+      font-size: 16px;
+      padding: 5px;
+      width: 200px;
+    }
+    input[type="password"] {
+      border: 1px solid #FFFFFF;
+      border-radius: 7px;
+      font-size: 16px;
+      padding: 5px;
+      width: 200px;
+    }
+
+    * {
+      margin: 4px 5px;
+    }
+
+    label {
+      color: white;
+    }
+  }
+
+}

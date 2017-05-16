@@ -11,15 +11,14 @@ class TopNav extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <nav className="top-nav">
-        <h1>Welcome to Prana!</h1>
+        <img id="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/3D_Geometrical_Figures_19.png" />
         {!this.props.currentUser ? (
-          <div className="session-links">
-            <Link to="/signin">Sign In</Link>
-            <Link to="/signup">Sign Up</Link>
-          </div>
+          <ul className="session-links">
+            <li className="button"><Link to="/signin">Sign In</Link></li>
+            <li className="button"><Link to="/signup">Sign Up</Link></li>
+          </ul>
         ) : (
           <button onClick={(e) => this.handleSignout(e)}>Sign Out</button>
         )}
