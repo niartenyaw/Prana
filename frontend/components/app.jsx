@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import SessionFormContainer from './session/session_form_container';
 import TopNavContainer from './top_nav/top_nav_container';
+import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <section className="app">
@@ -9,8 +10,8 @@ const App = () => (
       <TopNavContainer />
     </header>
 
-    <Route path="/signin" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/signin" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
   </section>
 );
 
