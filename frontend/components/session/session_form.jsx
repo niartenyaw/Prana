@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
         </section>
         <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
           <div className="form-header">
-            <h2 id="form-title">{text}</h2>
+            <h3 id="form-title">{text}</h3>
           </div>
           {(path === "/signup") ? (<label>Name
             <input type="text"

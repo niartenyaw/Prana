@@ -6,32 +6,26 @@
 
 .session-links {
   display: flex;
-  margin-right: 10px;
-  margin: 0 7px;
+  margin-right: 12px;
   a {
-    text-decoration: none;
-    color: $dark-blue;
     margin: 0 8px;
   }
 }
 
-.button {
+.button, .session-links a {
   text-decoration: none;
   font-weight: bold;
-  border: 2px solid $dark-blue;
+
   border-radius: 10px;
   padding: 10px 15px;
-  background-color: white;
-  color: $dark-blue;
-  :hover,  {
-
-  }
+  background-color: $medium-blue;
+  color: white;
 }
 
 .button:hover, .session-links a:hover {
-  cursor: pointer;
   background-color: $dark-blue;
-  color: white;
+  cursor: pointer;
+
   transform: color .4s ease-out,border-color .4s ease-out;
 }
 
@@ -46,6 +40,11 @@
 
   .hero-text {
     padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .session-form {
@@ -54,13 +53,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: $medium-blue;
+    // background-color: $medium-blue;
 
     .form-header {
       display: flex;
       justify-content: flex-start;
       width: 100%;
-      h2 {
+      #form-title {
         color: white;
       }
     }
