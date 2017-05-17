@@ -8,6 +8,7 @@
 
 ### Teams
 * `name`
+* `creator_id`
 * `created_at`
 * `modified_at`
 
