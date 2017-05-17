@@ -1,3 +1,30 @@
 // Place all the styles related to the StaticPagesController controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  background-image: url('http://www.publicdomainpictures.net/pictures/130000/velka/olive-top-gradient-background.jpg');
+  background-clip: border-box;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1, h2, h3, h4 {
+    font-family: sans-serif;
+  }
+  h1 {
+    font-size: 46px;
+    font-weight: bolder;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  h3 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}

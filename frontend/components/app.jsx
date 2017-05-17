@@ -6,12 +6,14 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <section className="app">
-    <header>
+    <header className="header">
       <TopNavContainer />
     </header>
 
-    <AuthRoute path="/signin" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+    <div className="main">
+      <AuthRoute path="/signin" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+    </div>
   </section>
 );
 

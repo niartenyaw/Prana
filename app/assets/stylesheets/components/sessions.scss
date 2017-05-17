@@ -4,15 +4,14 @@
 
 
 
-ul.session-links {
+.session-links {
   display: flex;
   margin-right: 10px;
-  li {
-    margin: 0 7px;
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  margin: 0 7px;
+  a {
+    text-decoration: none;
+    color: $dark-blue;
+    margin: 0 8px;
   }
 }
 
@@ -24,28 +23,48 @@ ul.session-links {
   padding: 10px 15px;
   background-color: white;
   color: $dark-blue;
+  :hover,  {
+
+  }
 }
+
 .button:hover, .session-links a:hover {
+  cursor: pointer;
   background-color: $dark-blue;
   color: white;
   transform: color .4s ease-out,border-color .4s ease-out;
 }
 
 .form-container {
-  margin-top: 20px;
+  position: relative;
+  top: 30vh;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
   width: 90%;
 
+  .hero-text {
+    padding: 30px;
+  }
+
   .session-form {
-    margin-top: 10px;
     padding: 30px;
     border-radius: 15px;
-    background-color: $light-green;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background-color: $medium-blue;
+
+    .form-header {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      h2 {
+        color: white;
+      }
+    }
+
 
     input[type="text"] {
       border: 1px solid #FFFFFF;

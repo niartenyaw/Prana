@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.push("/"));
+      .then(() => this.props.history.push("/dashboard"));
   }
 
   handleChange(type) {
@@ -34,8 +34,14 @@ class SessionForm extends React.Component {
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
       <div className="form-container">
+        <section className="hero-text">
+          <h1>Move Work Forward</h1>
+          <h4>Prana is the easiest way for teams to track their work—and get results.</h4>
+        </section>
         <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
-          <h1 id="form-title">{text}</h1>
+          <div className="form-header">
+            <h2 id="form-title">{text}</h2>
+          </div>
           {(path === "/signup") ? (<label>Name
             <input type="text"
               value={this.state.name}
