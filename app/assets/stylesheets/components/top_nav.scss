@@ -55,6 +55,7 @@
 .button, .session-links a {
   text-decoration: none;
   font-weight: bold;
+  font-family: $title-primary, $title-secondary;
 
   border-radius: 10px;
   padding: 10px 15px;
