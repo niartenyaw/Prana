@@ -5,7 +5,7 @@
   left: 0;
   z-index: 9999;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   background-color: white;
   display: flex;
@@ -15,14 +15,37 @@
   border-bottom: 1px solid $light-gray;
 }
 
-img#nav-logo {
-  width: 60px;
-  height: auto;
+.logo-container, .session-links {
+  margin: 0 40px;
 }
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  h2 {
+    font-family: $title-primary, $title-secondary;
+    font-weight: normal;
+    font-size: 40px;
+  }
+
+  img#nav-logo {
+    width: auto;
+    height: 60px;
+    margin-right: 5px;
+  }
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+
 
 .session-links {
   display: flex;
-  margin-right: 12px;
+
   a {
     margin: 0 8px;
   }

@@ -4,6 +4,7 @@ class SessionForm extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(this.props);
 
     this.state = this.nullState();
 
@@ -30,7 +31,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const path = this.props.match.path
+    const path = this.props.match.path;
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
       <div className="hero-container">
@@ -43,19 +44,19 @@ class SessionForm extends React.Component {
             <div className="form-header">
               <h3 id="form-title">{text}</h3>
             </div>
-            {(path === "/signup") ? (<label>Name
+            {(path === "/signup") ? (<label><span>Name</span>
               <input type="text"
                 value={this.state.name}
                 onChange={this.handleChange("name")} ></input>
             </label>) : (
               ""
             )}
-            <label>Email
+            <label><span>Email</span>
               <input type="text"
                 value={this.state.email}
                 onChange={this.handleChange("email")} ></input>
             </label>
-            <label>Password
+            <label><span>Password</span>
               <input type="password"
                 value={this.state.password}
                 onChange={this.handleChange("password")} ></input>
