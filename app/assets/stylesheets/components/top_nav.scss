@@ -13,7 +13,6 @@
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $light-gray;
 }
 
 .logo-container, .session-links {
@@ -29,6 +28,7 @@
     font-family: $title-primary, $title-secondary;
     font-weight: normal;
     font-size: 40px;
+    color: $dark-blue;
   }
 
   img#nav-logo {

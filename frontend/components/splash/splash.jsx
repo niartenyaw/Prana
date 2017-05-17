@@ -10,8 +10,7 @@ class Splash extends React.Component {
       <div className="hero-container">
         <section className="hero-text">
           <h1>Move Work Forward</h1>
-          <h4>Prana is the easiest way for teams to track</h4>
-          <h4>their work—and get results.</h4>
+          <h4>Prana is the easiest way for teams to track their work—and get results.</h4>
         </section>
         <SessionFormContainer />
       </div>

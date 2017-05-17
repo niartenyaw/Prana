@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
           </label>
           <div className="submit-buttons">
             <button className="button"
-              onClick={(e) => this.handleGuestSignin(e)} >Guest Sign-in</button>
+              onClick={(e) => this.handleGuestSignin(e)} >Guest Sign In</button>
             <input className="button" type="submit" value={text} />
           </div>
         </form>
