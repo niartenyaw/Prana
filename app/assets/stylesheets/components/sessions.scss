@@ -1,83 +1,54 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.hero-container {
-  position: relative;
-  top: 10vh;
-  height: 90vh;
-  width: 90%;
-  margin: 0 auto;
+.form-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 100px;
+  margin-top: 100px;
 
-  .hero-text {
-    h1 {
-      margin-top: 125px;
-      margin-bottom: 50px;
-    }
-    text-align: center;
-    margin-right: 50px;
-    color: white;
+  .form-header {
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    width: 100%;
+    #form-title {
+      color: white;
+    }
   }
 
-  .form-container {
+  .session-form {
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-right: 50px;
+    align-items: flex-end;
 
-    .session-form {
-      margin-top: 100px;
-      border-radius: 15px;
+    * {
+      margin: 2px 5px;
+    }
+
+    label {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      justify-content: center;
+      color: white;
 
-      * {
-        margin: 4px 5px;
-      }
-
-      .form-header {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        #form-title {
-          color: white;
-        }
-      }
-
-      label {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: white;
-
-        span {
-          width: 80px;
-        }
-      }
-
-      input[type="text"] {
-        border: 1px solid #FFFFFF;
-        border-radius: 7px;
-        font-size: 16px;
-        padding: 5px;
-        width: 200px;
-      }
-      input[type="password"] {
-        border: 1px solid #FFFFFF;
-        border-radius: 7px;
-        font-size: 16px;
-        padding: 5px;
-        width: 200px;
+      span {
+        width: 80px;
       }
     }
-  }
 
+    input[type="text"] {
+      border: 1px solid #FFFFFF;
+      border-radius: 7px;
+      font-size: 16px;
+      padding: 5px;
+      width: 200px;
+    }
+
+    input[type="password"] {
+      border: 1px solid #FFFFFF;
+      border-radius: 7px;
+      font-size: 16px;
+      padding: 5px;
+      width: 200px;
+    }
+  }
 }

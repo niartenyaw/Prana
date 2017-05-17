@@ -30,40 +30,40 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const path = this.props.match.path;
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
-      <div className="hero-container">
-        <section className="hero-text">
-          <h1>Move Work Forward</h1>
-          <h4>Prana is the easiest way for teams to track their work—and get results.</h4>
-        </section>
-        <section className="form-container">
-          <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
-            <div className="form-header">
-              <h3 id="form-title">{text}</h3>
-            </div>
-            {(path === "/signup") ? (<label><span>Name</span>
-              <input type="text"
-                value={this.state.name}
-                onChange={this.handleChange("name")} ></input>
-            </label>) : (
-              ""
-            )}
-            <label><span>Email</span>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.handleChange("email")} ></input>
-            </label>
-            <label><span>Password</span>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.handleChange("password")} ></input>
-            </label>
-            <input className="button" type="submit" value={text} />
-          </form>
-        </section>
-      </div>
+      <section className="form-container">
+        <div className="form-header">
+          <h3 id="form-title">{text}</h3>
+        </div>
+        <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
+          {(path === "/signup") ? (<label><span>Name</span>
+            <input type="text"
+              value={this.state.name}
+              onChange={this.handleChange("name")} ></input>
+          </label>) : (
+            ""
+          )}
+
+          <label><span>Email</span>
+            <input type="text"
+              value={this.state.email}
+              onChange={this.handleChange("email")} ></input>
+          </label>
+
+          <label><span>Password</span>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.handleChange("password")} ></input>
+          </label>
+          <input className="button" type="submit" value={text} />
+        </form>
+        <ul className="session-errors">
+          { this.props.errors.map(err => <li key={err}>{err}</li>)}
+        </ul>
+      </section>
     );
   }
 };

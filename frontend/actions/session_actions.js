@@ -6,19 +6,19 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const signup = user => dispatch => (
   SessionAPIUtil.signup(user)
     .then(respUser => dispatch(receiveCurrentUser(respUser)),
-    errors => console.log(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const signin = user => dispatch => (
   SessionAPIUtil.signin(user)
     .then((respUser) => dispatch(receiveCurrentUser(respUser)),
-    errors => console.log(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const signout = () => dispatch => (
   SessionAPIUtil.signout()
     .then(() => dispatch(receiveCurrentUser(null)),
-    errors => console.log(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const receiveCurrentUser = currentUser => ({

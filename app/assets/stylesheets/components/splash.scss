@@ -1,0 +1,35 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero-container {
+  position: relative;
+  top: 10vh;
+  height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+
+  background-image: url('https://res.cloudinary.com/dbxwu45pr/image/upload/v1495046731/hero-2_hiyzq5.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .hero-text {
+    text-align: center;
+    margin-right: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+      margin-top: 125px;
+      margin-bottom: 50px;
+    }
+  }
+}
