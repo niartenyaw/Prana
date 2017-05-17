@@ -4,7 +4,6 @@ class SessionForm extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = this.nullState();
 
     this.handleSubmit.bind(this);
@@ -25,12 +24,22 @@ class SessionForm extends React.Component {
       .then(() => this.props.history.push("/dashboard"));
   }
 
+  handleGuestSignin(e) {
+    e.preventDefault();
+
+    const defaultUser = {
+      email: "guest@guest.com",
+      password:"password"
+    };
+    this.props.guestSignin(defaultUser)
+      .then(() => this.props.history.push("/dashboard"));
+  }
+
   handleChange(type) {
     return e => this.setState({ [type]: e.target.value })
   }
 
   render() {
-    console.log(this.props);
     const path = this.props.match.path;
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
@@ -58,7 +67,11 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.handleChange("password")} ></input>
           </label>
-          <input className="button" type="submit" value={text} />
+          <div className="submit-buttons">
+            <button className="button"
+              onClick={(e) => this.handleGuestSignin(e)} >Guest Sign-in</button>
+            <input className="button" type="submit" value={text} />
+          </div>
         </form>
         <ul className="session-errors">
           { this.props.errors.map(err => <li key={err}>{err}</li>)}

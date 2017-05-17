@@ -15,6 +15,7 @@ const mapDispatchToProps = (dispatch, { location }) => ({
   ) : (
     user => dispatch(signin(user))
   ),
+  guestSignin: user => dispatch(signin(user)),
   receiveErrors: errors => dispatch(receiveErrors(errors))
 });
 
