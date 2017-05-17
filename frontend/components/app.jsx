@@ -11,6 +11,7 @@ const App = () => (
     </header>
 
     <div className="main">
+      
       <AuthRoute path="/signin" component={SplashContainer} />
       <AuthRoute path="/signup" component={SplashContainer} />
     </div>
