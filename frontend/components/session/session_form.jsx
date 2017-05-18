@@ -44,10 +44,13 @@ class SessionForm extends React.Component {
     const text = path === "/signin" ? "Sign In" : "Sign Up";
     return (
       <section className="form-container">
+
         <div className="form-header">
           <h3 id="form-title">{text}</h3>
         </div>
+
         <form className="session-form" onSubmit={e => this.handleSubmit(e)}>
+
           {(path === "/signup") ? (<label><span>Name</span>
             <input type="text"
               value={this.state.name}
@@ -67,11 +70,15 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.handleChange("password")} ></input>
           </label>
+
           <div className="submit-buttons">
+
             <button className="button"
               onClick={(e) => this.handleGuestSignin(e)} >Guest Sign In</button>
             <input className="button" type="submit" value={text} />
+
           </div>
+
         </form>
         <ul className="session-errors">
           { this.props.errors.map(err => <li key={err}>{err}</li>)}

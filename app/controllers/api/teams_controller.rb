@@ -1,6 +1,14 @@
 class Api::TeamsController < ApplicationController
   before_filter :ensure_logged_in!
 
+  def index
+    @teams = Team.all
+  end
+
+  def show
+    @team = Team.find(params[:id])
+  end
+
   def create
     @team = Team.new(team_params)
     @team.creator_id = current_user.id
