@@ -21,7 +21,7 @@ const TeamReducer = (state = {}, action) => {
     case REMOVE_TEAM:
       delete allTeams[action.team.id];
       let currentTeam = newState.currentTeam;
-      if (currentTeam.id === action.id) {
+      if (currentTeam.id === action.team.id) {
         currentTeam = {};
       }
       return { allTeams, currentTeam };
