@@ -23,7 +23,9 @@ const App = () => (
       <ProRoute exact path="/" component={() => <Redirect to="/dashboard" />} />
 
       <ProRoute path="/" component={SideNavContainer} />
-      <ProRoute path="/dashboard" component={DashboardContainer} />
+      <div className="main-panel">
+        <ProRoute path="/dashboard" component={DashboardContainer} />
+      </div>
     </div>
   </section>
 );

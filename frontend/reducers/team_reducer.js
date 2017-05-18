@@ -7,7 +7,7 @@ const nullTeams = {
 
 const TeamReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, state);
+  let newState = Object.assign({}, nullTeams, state);
 
   let allTeams = newState.allTeams;
   switch(action.type) {

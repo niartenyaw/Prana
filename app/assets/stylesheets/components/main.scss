@@ -1,4 +1,7 @@
 .main {
   position: fixed;
+  width: 100%;
   top: 10vh;
+  display: flex;
+  justify-content: space-between;
 }
