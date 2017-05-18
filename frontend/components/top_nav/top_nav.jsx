@@ -12,10 +12,10 @@ class TopNav extends React.Component {
   render() {
     return (
       <nav className="top-nav">
-        <div className="logo-container">
+        <Link to="/" className="logo-container">
           <img id="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/3D_Geometrical_Figures_19.png" />
           <h2>prana</h2>
-        </div>
+        </Link>
 
         {!this.props.currentUser ? (
           <div className="session-links">
