@@ -2,5 +2,14 @@
   flex: 5;
   height: 90vh;
   background-color: $light-gray;
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .inner-panel {
+    height: 95%;
+    width: 95%;
+    margin: 0 5px;
+    background-color: white;
+    box-shadow: 1px 2px 2px gray;
+  }
 }

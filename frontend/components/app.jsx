@@ -24,7 +24,9 @@ const App = () => (
 
       <ProRoute path="/" component={SideNavContainer} />
       <div className="main-panel">
-        <ProRoute path="/dashboard" component={DashboardContainer} />
+        <div className="inner-panel">
+          <ProRoute path="/dashboard" component={DashboardContainer} />
+        </div>
       </div>
     </div>
   </section>
