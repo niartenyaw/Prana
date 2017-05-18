@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { Route, Redirect } from 'react-router-dom';
+import { AuthRoute, ProRoute } from '../util/route_util';
 
 import SplashContainer from './splash/splash_container';
 import TopNavContainer from './top_nav/top_nav_container';
@@ -14,8 +14,9 @@ const App = () => (
     </header>
 
     <div className="main">
-      <Route path="/teams" component={TeamIndexContainer} />
-      <Route path="/dashboard" component={DashboardContainer} />
+      <ProRoute exact path="/" component={() => <Redirect to="/dashboard" />} />
+      <ProRoute path="/teams" component={TeamIndexContainer} />
+      <ProRoute path="/dashboard" component={DashboardContainer} />
       <AuthRoute path="/signin" component={SplashContainer} />
       <AuthRoute path="/signup" component={SplashContainer} />
     </div>

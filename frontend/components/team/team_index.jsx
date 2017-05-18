@@ -11,7 +11,7 @@ class TeamIndex extends React.Component {
     return (
       <section className="teams-index">
         <ul>
-          {this.props.allTeams.map(team => <TeamIndexItem team={team} />)}
+          {this.props.allTeams.map(team => <TeamIndexItem key={team.id} team={team} />)}
         </ul>
       </section>
     );
