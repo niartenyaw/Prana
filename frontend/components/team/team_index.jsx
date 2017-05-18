@@ -3,6 +3,10 @@ import TeamIndexItem from './team_index_item';
 
 class TeamIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   componentWillMount() {
     this.props.getAllTeams();
   }

@@ -15,8 +15,8 @@ const Auth = ({component: Component, path, loggedIn}) => (
 
 const Protected = ({component: Component, path, loggedIn, exact}) => (
   <Route exact={exact ? true : false} path={path} render={(props) => (
-    !loggedIn ? (
-      <Redirect to="/signin" />
+    !loggedIn && (path !== "/signin" || path !== "/signup") ? (
+        <Redirect to="/signin" />
     ) : (
       <Component {...props} />
     )

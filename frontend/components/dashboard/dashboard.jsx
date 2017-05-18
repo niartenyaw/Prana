@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <Link to="/teams">Teams</Link>
+        <h1>Dashboard!</h1>
       </div>
     );
   }
