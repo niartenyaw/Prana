@@ -10,6 +10,12 @@ class User < ApplicationRecord
   has_many :teams,
   foreign_key: :creator_id
 
+  has_many :team_memberships
+
+  has_many :teams,
+    through: :team_memberships,
+    source: :team
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_password?(password)

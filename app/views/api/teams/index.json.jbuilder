@@ -1,4 +1,4 @@
-@teams.each do |team|
+current_user.teams.each do |team|
   json.set! team.id do
     json.partial! 'api/teams/team', locals: { team: team }
   end
