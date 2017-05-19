@@ -10,6 +10,7 @@
 
   .team-header {
     width: 100%;
+    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
 
@@ -36,7 +37,10 @@
 
   .errors-container {
     width: 100%;
-
-
+    color: $dark-blue;
+    .errors-list {
+      padding-left: 20px;
+      list-style: circle;
+    }
   }
 }
