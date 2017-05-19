@@ -54,7 +54,7 @@ class TeamForm extends React.Component {
         <section className="team-form">
           <form
             key={this.props.currentTeam.id}
-            onSubmit={e => handleSubmit(e)} >
+            onSubmit={this.handleSubmit} >
             <input
               className="name-input form-input"
               ref={(input) => { this.nameInput = input; }}
