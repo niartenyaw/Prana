@@ -25,8 +25,13 @@
         padding-left: 10px;
       }
     }
-    .button {
-      flex: 1;
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      .button {
+        flex: 1;
+      }
     }
   }
 }

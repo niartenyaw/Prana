@@ -24,7 +24,9 @@ class TeamShow extends React.Component {
         <div className="team-header">
           <TeamFormContainer />
           { this.props.match.path === "/teams/new" ? ("") : (
-            <button className="button" onClick={this.handleClick}>Delete</button>
+            <div className="button-container">
+              <button className="button" onClick={this.handleClick}>Delete</button>
+            </div>
           )}
         </div>
       </section>
