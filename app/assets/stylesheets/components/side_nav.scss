@@ -37,11 +37,13 @@
     width: 100%;
     li {
       width: 100%;
-      a {
+      button {
         padding: 3px 0;
         padding-left: 30px;
         padding-right: 10px;
-        display: block;
+        background-color: inherit;
+        text-align: left;
+        outline: none;
         width: 100%;
         color: white;
       }

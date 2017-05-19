@@ -21,6 +21,7 @@
 
 ### Projects
 * `owner_id`
+* `team_id`
 * `name`
 * `created_at`
 * `modified_at`
