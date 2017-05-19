@@ -24,6 +24,11 @@ class TeamForm extends React.Component {
     };
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.handleFocusOut();
+  }
+
   handleFocusOut() {
     if (this.state.id) {
       this.props.patchTeam(this.state);
@@ -37,9 +42,9 @@ class TeamForm extends React.Component {
   render() {
     return (
         <section className="team-form">
-          <form key={this.props.currentTeam.id}>
+          <form key={this.props.currentTeam.id} onSubmit={e => handleSubmit(e)}>
             <input
-              className="name-input"
+              className="name-input form-input"
               ref={(input) => { this.nameInput = input; }}
               type="text"
               onChange={this.handleChange("name")}
