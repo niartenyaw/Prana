@@ -13,7 +13,7 @@ class MainPanel extends React.Component {
             <ProRoute path="/dashboard" component={DashboardContainer} />
             <Switch>
               <ProRoute exact path="/teams/new" component={TeamFormContainer} />
-              <ProRoute exact path="/teams/:teamId" component={TeamShowContainer} />
+              <ProRoute exact path="/teams/:teamId" component={TeamFormContainer} />
             </Switch>
             <ProRoute exact path="/teams/:teamId/edit" component={TeamFormContainer} />
           </div>

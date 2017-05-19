@@ -2,42 +2,52 @@ import React from 'react';
 
 class TeamForm extends React.Component {
 
-  nullTeam() {
-    return {
-      name: ""
-    };
-  }
-
   constructor(props) {
     super(props);
 
-    this.state = this.props.team || this.nullTeam();
-    this.handleSubmit.bind(this);
+    this.state = Object.assign({}, this.props.currentTeam);
     this.handleChange.bind(this);
+  }
+  
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    this.setState(newProps.currentTeam);
   }
 
   handleChange(type) {
-    return e => this.setState({ [type]: e.target.value })
-  }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.processForm(this.state);
+    return e => {
+      this.setState({ [type]: e.target.value }, () => {
+        console.log(this.state);
+        if (this.state.id) {
+          this.props.patchTeam(this.state);
+        }
+        else {
+          this.props.postTeam(this.state)
+            .then(resp => this.props.history.push(`/teams/${resp.currentTeam.id}`));
+        }
+      });
+    };
   }
 
   render() {
-    console.log(this.state);
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <label>Team Name
-          <input
-            type="text"
-            onChange={this.handleChange("name")}
-            value={this.state.name}></input>
-        </label>
-
-        <input className="button" type="submit" value="Submit"></input>
-      </form>
+      <div>
+        <section className="team-show">
+          <h2 className="team-show-header">
+            Tasks for {this.props.currentTeam.name}
+          </h2>
+        </section>
+        <form key={this.props.currentTeam.id}>
+          <label>Team Name
+            <input
+              autofocus="autofocus"
+              type="text"
+              onChange={this.handleChange("name")}
+              value={this.state.name}></input>
+          </label>
+        </form>
+      </div>
     );
   }
 }

@@ -1,18 +1,23 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { postTeam, patchTeam, receiveErrors } from '../../actions/team_actions';
+import { getAllTeams, postTeam, patchTeam, receiveErrors } from '../../actions/team_actions';
 import TeamForm from './team_form';
 
-const mapStateToProps = (state, { match }) => ({
-  team: match.params.postId ? state.teams.allTeams[match.params.postId] : undefined
-});
+const _empty = {
+  name: "",
+  creator_id: 0
+};
+
+const mapStateToProps = (state, { match }) => {
+  return {
+    currentTeam: state.teams.allTeams[match.params.teamId] || _empty
+  };
+};
 
 const mapDispatchToProps = (dispatch, { match }) => ({
-  processForm: match.params.postId ? (
-    team => dispatch(patchTeam(team))
-  ) : (
-    team => dispatch(postTeam(team))
-  ),
+  getAllTeams: () => dispatch(getAllTeams()),
+  patchTeam: team => dispatch(patchTeam(team)),
+  postTeam: team => dispatch(postTeam(team)),
   receiveErrors: errors => dispatch(receiveErrors(errors))
 });
 

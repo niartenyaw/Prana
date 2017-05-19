@@ -7,13 +7,8 @@ class TeamShow extends React.Component {
   }
 
   render() {
-
     return (
-      <section className="team-show">
-        <h2 className="team-show-header">
-          Tasks for {this.props.currentTeam.name}
-        </h2>
-      </section>
+      <div></div>
     );
   }
 }
