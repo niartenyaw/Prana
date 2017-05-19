@@ -23,12 +23,12 @@ class TeamShow extends React.Component {
       <section className="team-show">
         <div className="team-header">
           <TeamFormContainer />
-          { this.props.match.path === "/teams/new" ? ("") : (
-            <div className="button-container">
-              <button className="button" onClick={this.handleClick}>Delete</button>
-            </div>
-          )}
+          <div>
+          </div>
         </div>
+        <ul className="errors-list">
+          {this.props.errors.map(err => <li>{err}</li>)}
+        </ul>
       </section>
     );
   }

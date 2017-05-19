@@ -3,7 +3,7 @@ import * as TeamAPIUtil from '../util/team_api_util';
 export const RECEIVE_TEAM = "RECEIVE_TEAM";
 export const RECEIVE_TEAMS = "RECEIVE_TEAMS";
 export const REMOVE_TEAM = "REMOVE_TEAM";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_TEAM_ERRORS = "RECEIVE_TEAM_ERRORS";
 
 export const getAllTeams = () => dispatch => (
   TeamAPIUtil.getAllTeams()
@@ -45,7 +45,7 @@ export const removeTeam = team => ({
   team
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+export const receiveTeamErrors = errors => ({
+  type: RECEIVE_TEAM_ERRORS,
   errors
 })

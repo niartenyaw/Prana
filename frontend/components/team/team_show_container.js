@@ -7,9 +7,12 @@ const _empty = {
   name: ""
 };
 
-const mapStateToProps = (state, { match }) => ({
-  currentTeam: state.teams.allTeams[match.params.teamId] || _empty
-});
+const mapStateToProps = (state, { match }) => {
+  return {
+    currentTeam: state.teams.allTeams[match.params.teamId] || _empty,
+    errors: state.teams.errors
+  };
+};
 
 const mapDispatchToProps = (dispatch, { match }) => ({
   deleteTeam: () => dispatch(deleteTeam(match.params.teamId))

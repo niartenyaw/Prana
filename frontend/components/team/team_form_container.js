@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { getAllTeams, postTeam, patchTeam, receiveErrors } from '../../actions/team_actions';
+import { getAllTeams, postTeam, patchTeam, receiveTeamErrors } from '../../actions/team_actions';
 import TeamForm from './team_form';
 
 const _empty = {
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, { match }) => ({
   getAllTeams: () => dispatch(getAllTeams()),
   patchTeam: team => dispatch(patchTeam(team)),
   postTeam: team => dispatch(postTeam(team)),
-  receiveErrors: errors => dispatch(receiveErrors(errors))
+  receiveTeamErrors: errors => dispatch(receiveTeamErrors(errors))
 });
 
 export default withRouter(

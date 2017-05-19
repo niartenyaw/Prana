@@ -33,18 +33,22 @@ class TeamForm extends React.Component {
 
   handleFocusOut() {
     if (this.state.id) {
-      this.props.patchTeam(this.state);
+      this.props.patchTeam(this.state)
+        .fail(errors => this.props.receiveTeamErrors(errors.responseJSON));
     }
     else {
       this.props.postTeam(this.state)
-        .then(resp => this.props.history.push(`/teams/${resp.currentTeam.id}`));
+        .then(resp => this.props.history.push(`/teams/${resp.currentTeam.id}`),
+          errors => this.props.receiveTeamErrors(errors.responseJSON));
     }
   }
 
   render() {
     return (
         <section className="team-form">
-          <form key={this.props.currentTeam.id} onSubmit={e => handleSubmit(e)}>
+          <form
+            key={this.props.currentTeam.id}
+            onSubmit={e => handleSubmit(e)} >
             <input
               className="name-input form-input"
               ref={(input) => { this.nameInput = input; }}
