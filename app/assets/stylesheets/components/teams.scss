@@ -2,12 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.team-form {
+.team-show {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  .name-input {
-    font-size: 30px;
+  .team-header {
+    display: flex;
+    justify-content: center;
+
+    .name-input {
+      font-size: 30px;
+    }
   }
 }

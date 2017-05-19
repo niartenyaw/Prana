@@ -3,8 +3,12 @@ import { withRouter } from 'react-router';
 import { deleteTeam } from '../../actions/team_actions';
 import TeamShow from './team_show';
 
-const mapStateToProps = (state, { match }) => ({
+const _empty = {
+  name: ""
+};
 
+const mapStateToProps = (state, { match }) => ({
+  currentTeam: state.teams.allTeams[match.params.teamId] || _empty
 });
 
 const mapDispatchToProps = (dispatch, { match }) => ({
