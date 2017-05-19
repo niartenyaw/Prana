@@ -1,18 +1,26 @@
 import { RECEIVE_TEAM, RECEIVE_TEAMS, REMOVE_TEAM } from '../actions/team_actions';
 
 const nullTeams = {
-  allTeams: {},
-  currentTeam: {}
+  allTeams: {
+    0: {
+      name: "",
+      creator_id: 0
+    }
+  },
+  currentTeam: {
+    name: "",
+    creator_id: 0
+  }
 };
 
-const TeamReducer = (state = {}, action) => {
+const TeamReducer = (state = nullTeams, action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, nullTeams, state);
+  let newState = Object.assign({}, state);
 
   let allTeams = newState.allTeams;
   switch(action.type) {
     case RECEIVE_TEAMS:
-      return Object.assign({}, nullTeams, { allTeams: action.teams });
+      return Object.assign({}, newState, { allTeams: action.teams });
     case RECEIVE_TEAM:
       const addToAllTeams = { allTeams: Object.assign(allTeams, {
         [action.currentTeam.id] : action.currentTeam
