@@ -18,7 +18,7 @@ class TeamIndex extends React.Component {
         <div className="teams-index-header">
           <h4>Teams</h4>
           <Link to="/teams/new">
-            <img className="plus-button" src="assets/white-plus-button.png" />
+            <img className="plus-button" src="https://res.cloudinary.com/dbxwu45pr/image/upload/v1495232281/white-plus-button_yvdzi8.png" />
             </Link>
         </div>
         <ul>
