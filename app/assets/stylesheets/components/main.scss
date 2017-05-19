@@ -36,13 +36,13 @@
   }
 
   .form-input {
-    border-top: 1px solid white;
+    border-top: 3px solid white;
     border-bottom: 1px solid white;
   }
 
   .form-input:focus {
     outline: none;
-    border-top: 2px solid $gray;
+    border-top: 3px solid $gray;
     border-bottom: 1px solid $gray;
   }
 }
