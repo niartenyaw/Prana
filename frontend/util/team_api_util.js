@@ -1,10 +1,3 @@
-export const getOneTeam = id => (
-  $.ajax({
-    url: `/api/teams/${id}`,
-    method: 'GET'
-  })
-);
-
 export const getAllTeams = () => (
   $.ajax({
     url: '/api/teams',

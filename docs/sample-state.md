@@ -23,14 +23,14 @@ The following is an example of a full state.
       }
     },
     // Current team being viewed
-    currentTeam: {
+    current: {
       name: "Team 1",
       id: 1
     }
   },
 
   users: {
-    // All Users in the currentTeam
+    // All Users in the current(Team)
     all_users: {
       1: {
         email: "this@this.com",
@@ -38,14 +38,14 @@ The following is an example of a full state.
       }
     },
     // Current user profile being viewed (only other users)
-    userDetail: {
+    current: {
       email: "this@this.com",
       name: "First Last"
     }
   },
 
   projects: {
-    // All projects for currentTeam
+    // All projects for current(Team)
     all_projects: {
       1: {
         title: "title",
@@ -53,14 +53,14 @@ The following is an example of a full state.
       }
     },
     // Current project being viewed
-    projectDetail: {
+    current: {
       title: "title",
       id: 1
     }
   }
 
   tasks: {
-    // All tasks connected to projectDetail
+    // All tasks connected to current(Project)
     all_tasks: {
       1: {
         title: "title",
@@ -70,7 +70,7 @@ The following is an example of a full state.
       }
     },
     // Current task being viewed
-    taskDetail: {
+    current: {
       title: "title",
       description: "description",
       creator_id: 1,

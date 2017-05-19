@@ -10,11 +10,6 @@ export const getAllTeams = () => dispatch => (
     .then(teams => dispatch(receiveTeams(teams)))
 );
 
-export const getOneTeam = id => dispatch => (
-  TeamAPIUtil.getOneTeam(id)
-    .then(team => dispatch(receiveTeam(team)))
-);
-
 export const postTeam = team => dispatch => (
   TeamAPIUtil.postTeam(team)
     .then(respTeam => dispatch(receiveTeam(respTeam)))

@@ -45,7 +45,7 @@ class TeamForm extends React.Component {
 
   render() {
     const name = this.props.currentTeam.name === "" ? (
-      "Team name"
+      "Team"
     ) : (
       this.props.currentTeam.name
     );
