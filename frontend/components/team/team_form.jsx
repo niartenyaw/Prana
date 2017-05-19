@@ -9,6 +9,10 @@ class TeamForm extends React.Component {
     this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
   componentWillReceiveProps(newProps) {
     this.setState(newProps.currentTeam);
   }
@@ -38,7 +42,7 @@ class TeamForm extends React.Component {
         <form key={this.props.currentTeam.id}>
           <label>Team Name
             <input
-              autofocus="autofocus"
+              ref={(input) => { this.nameInput = input; }}
               type="text"
               onChange={this.handleChange("name")}
               value={this.state.name}></input>
