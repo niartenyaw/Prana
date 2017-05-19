@@ -17,7 +17,7 @@ class TeamIndex extends React.Component {
       <section className="teams-index">
         <div className="teams-index-header">
           <h4>Teams</h4>
-          <Link to="/teams/new"><img className="plus-button" src="assets/white-plus-button.png" /></Link>
+          <Link to="/new_team"><img className="plus-button" src="assets/white-plus-button.png" /></Link>
         </div>
         <ul>
           {this.props.allTeams.map(team => <TeamIndexItem key={team.id} team={team} />)}

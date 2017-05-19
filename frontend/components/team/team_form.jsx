@@ -34,7 +34,7 @@ class TeamForm extends React.Component {
             value={this.state.name}></input>
         </label>
 
-        <input type="submit" value="Submit"></input>
+        <input className="button" type="submit" value="Submit"></input>
       </form>
     );
   }
