@@ -8,17 +8,14 @@ class TeamForm extends React.Component {
     this.state = Object.assign({}, this.props.currentTeam);
     this.handleChange.bind(this);
   }
-  
+
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     this.setState(newProps.currentTeam);
   }
 
   handleChange(type) {
-
     return e => {
       this.setState({ [type]: e.target.value }, () => {
-        console.log(this.state);
         if (this.state.id) {
           this.props.patchTeam(this.state);
         }

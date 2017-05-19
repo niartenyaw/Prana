@@ -12,8 +12,8 @@ class MainPanel extends React.Component {
           <div className="inner-panel">
             <ProRoute path="/dashboard" component={DashboardContainer} />
             <Switch>
-              <ProRoute exact path="/teams/new" component={TeamFormContainer} />
-              <ProRoute exact path="/teams/:teamId" component={TeamFormContainer} />
+              <ProRoute exact path="/teams/new" key="new" component={TeamFormContainer} />
+              <ProRoute exact path="/teams/:teamId" key="edit" component={TeamFormContainer} />
             </Switch>
             <ProRoute exact path="/teams/:teamId/edit" component={TeamFormContainer} />
           </div>
