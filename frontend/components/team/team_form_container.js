@@ -4,8 +4,7 @@ import { getAllTeams, postTeam, patchTeam, receiveErrors } from '../../actions/t
 import TeamForm from './team_form';
 
 const _empty = {
-  name: "",
-  creator_id: 0
+  name: ""
 };
 
 const mapStateToProps = (state, { match }) => {
