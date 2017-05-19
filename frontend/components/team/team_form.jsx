@@ -7,7 +7,11 @@ class TeamForm extends React.Component {
 
     this.state = Object.assign({}, this.props.currentTeam);
     this.handleChange.bind(this);
-    this.handleFocusOut = this.handleFocusOut.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.receiveTeamErrors({ errors: [] });
   }
 
   componentDidMount() {
@@ -28,10 +32,10 @@ class TeamForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.handleFocusOut();
+    this.handleOnBlur();
   }
 
-  handleFocusOut() {
+  handleOnBlur() {
     if (this.state.id) {
       this.props.patchTeam(this.state)
         .fail(errors => this.props.receiveTeamErrors(errors.responseJSON));
@@ -60,7 +64,7 @@ class TeamForm extends React.Component {
               ref={(input) => { this.nameInput = input; }}
               type="text"
               onChange={this.handleChange("name")}
-              onBlur={this.handleFocusOut}
+              onBlur={this.handleOnBlur}
               placeholder={name}
               value={this.state.name}></input>
           </form>
