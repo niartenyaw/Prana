@@ -33,22 +33,16 @@ class TeamForm extends React.Component {
 
   render() {
     return (
-      <div>
         <section className="team-show">
-          <h2 className="team-show-header">
-            Tasks for {this.props.currentTeam.name}
-          </h2>
-        </section>
-        <form key={this.props.currentTeam.id}>
-          <label>Team Name
+          <form key={this.props.currentTeam.id}>
             <input
               ref={(input) => { this.nameInput = input; }}
               type="text"
               onChange={this.handleChange("name")}
+              placeholder="Team name"
               value={this.state.name}></input>
-          </label>
-        </form>
-      </div>
+          </form>
+        </section>
     );
   }
 }
