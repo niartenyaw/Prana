@@ -11,7 +11,9 @@ class TeamForm extends React.Component {
   }
 
   componentDidMount() {
-    this.nameInput.focus();
+    if (this.props.match.path === "/teams/new") {
+      this.nameInput.focus();
+    }
   }
 
   componentWillReceiveProps(newProps) {
