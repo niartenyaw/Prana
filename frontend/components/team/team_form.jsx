@@ -33,9 +33,10 @@ class TeamForm extends React.Component {
 
   render() {
     return (
-        <section className="team-show">
+        <section className="team-form">
           <form key={this.props.currentTeam.id}>
             <input
+              className="name-input"
               ref={(input) => { this.nameInput = input; }}
               type="text"
               onChange={this.handleChange("name")}

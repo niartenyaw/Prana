@@ -1,3 +1,13 @@
 // Place all the styles related to the api/teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .name-input {
+    font-size: 30px;
+  }
+}
