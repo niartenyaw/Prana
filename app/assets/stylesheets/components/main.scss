@@ -4,4 +4,34 @@
   top: 10vh;
   display: flex;
   justify-content: space-between;
+
+  height: 90vh;
+
+  a {
+    font-family: $text-primary, $text-secondary;
+  }
+  h1, h2, h3, h4 {
+    font-family: $title-primary, $title-secondary;
+  }
+  h1 {
+    font-size: 46px;
+    font-weight: bolder;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  h3 {
+    font-size: 28px;
+    font-weight: normal;
+  }
+  h4 {
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  .plus-button {
+    width: 30px;
+    height: 30px;
+  }
 }

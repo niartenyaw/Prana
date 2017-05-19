@@ -1,4 +1,7 @@
-import { RECEIVE_TEAM, RECEIVE_TEAMS, REMOVE_TEAM } from '../actions/team_actions';
+import { RECEIVE_TEAM,
+  RECEIVE_TEAMS,
+  REMOVE_TEAM,
+  RECEIVE_ERRORS } from '../actions/team_actions';
 
 const nullTeams = {
   allTeams: {
@@ -10,7 +13,8 @@ const nullTeams = {
   currentTeam: {
     name: "",
     creator_id: 0
-  }
+  },
+  errors: []
 };
 
 const TeamReducer = (state = nullTeams, action) => {
@@ -33,6 +37,8 @@ const TeamReducer = (state = nullTeams, action) => {
         currentTeam = {};
       }
       return { allTeams, currentTeam };
+    case RECEIVE_ERRORS:
+      return Object.assign(newState, { errors })
     default:
       return state;
   }

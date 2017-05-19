@@ -1,5 +1,6 @@
 import React from 'react';
 import TeamIndexItem from './team_index_item';
+import { Link } from 'react-router-dom';
 
 class TeamIndex extends React.Component {
 
@@ -14,7 +15,10 @@ class TeamIndex extends React.Component {
   render() {
     return (
       <section className="teams-index">
-        <h4 className="teams-index-header">Teams</h4>
+        <div className="teams-index-header">
+          <h4>Teams</h4>
+          <Link to="/teams/new"><img className="plus-button" src="assets/white-plus-button.png" /></Link>
+        </div>
         <ul>
           {this.props.allTeams.map(team => <TeamIndexItem key={team.id} team={team} />)}
         </ul>
