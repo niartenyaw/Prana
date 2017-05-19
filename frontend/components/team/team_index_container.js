@@ -9,8 +9,7 @@ const mapStateToProps = (state, { match }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getAllTeams: () => dispatch(getAllTeams()),
-  deleteTeam: id => dispatch(deleteTeam(id))
+  getAllTeams: () => dispatch(getAllTeams())
 });
 
 export default withRouter(
