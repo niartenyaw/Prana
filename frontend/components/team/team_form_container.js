@@ -4,7 +4,7 @@ import { postTeam, patchTeam, receiveErrors } from '../../actions/team_actions';
 import TeamForm from './team_form';
 
 const mapStateToProps = (state, { match }) => ({
-  team: state.allTeams[match.params.postId]
+  team: match.params.postId ? state.teams.allTeams[match.params.postId] : undefined
 });
 
 const mapDispatchToProps = (dispatch, { match }) => ({

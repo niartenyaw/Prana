@@ -12,6 +12,8 @@ class TeamForm extends React.Component {
     super(props);
 
     this.state = this.props.team || this.nullTeam();
+    this.handleSubmit.bind(this);
+    this.handleChange.bind(this);
   }
 
   handleChange(type) {

@@ -23,6 +23,12 @@
         margin-right: 20px;
         display: flex;
         align-items: center;
+        img {
+          opacity: 0.7;
+        }
+        img:hover {
+          opacity: 1.0;
+        }
       }
     }
   }
