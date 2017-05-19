@@ -7,14 +7,21 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :teams,
-  foreign_key: :creator_id
 
+  # Teams
+  has_many :created_teams,
+    foreign_key: :creator_id
+    class_name: :Team
   has_many :team_memberships
-
   has_many :teams,
     through: :team_memberships,
     source: :team
+
+  #Projects
+  has_many :created_projects,
+    foreign_key: :creator_id,
+    class_name: :Project
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
