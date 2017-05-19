@@ -5,10 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
   .inner-panel {
+    padding: 20px;
+
     height: 95%;
     width: 95%;
-    margin: 0 5px;
     background-color: white;
     box-shadow: 1px 2px 2px gray;
   }

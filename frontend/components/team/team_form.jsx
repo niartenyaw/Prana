@@ -44,6 +44,12 @@ class TeamForm extends React.Component {
   }
 
   render() {
+    const name = this.props.currentTeam.name === "" ? (
+      "Team name"
+    ) : (
+      this.props.currentTeam.name
+    );
+
     return (
         <section className="team-form">
           <form
@@ -55,7 +61,7 @@ class TeamForm extends React.Component {
               type="text"
               onChange={this.handleChange("name")}
               onBlur={this.handleFocusOut}
-              placeholder="Team name"
+              placeholder={name}
               value={this.state.name}></input>
           </form>
         </section>

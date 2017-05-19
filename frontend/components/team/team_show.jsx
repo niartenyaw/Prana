@@ -23,12 +23,15 @@ class TeamShow extends React.Component {
       <section className="team-show">
         <div className="team-header">
           <TeamFormContainer />
-          <div>
+          <div className="button-container">
+            <button className="button" onClick={this.handleClick}>Delete</button>
           </div>
         </div>
-        <ul className="errors-list">
-          {this.props.errors.map(err => <li>{err}</li>)}
-        </ul>
+        <div className="errors-container">
+          <ul className="errors-list">
+            {this.props.errors.map(err => <li key={err}>{err}</li>)}
+          </ul>
+        </div>
       </section>
     );
   }

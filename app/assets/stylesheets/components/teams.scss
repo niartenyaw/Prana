@@ -7,16 +7,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   .team-header {
     width: 100%;
-    margin: 20px 0;
-    padding-right: 20px;
     display: flex;
     justify-content: space-between;
 
     .team-form {
       flex: 12;
-      margin: 0 20px;
+      margin-right: 20px;
       border-bottom: 2px solid $gray;
       .name-input {
         width: 100%;
@@ -33,5 +32,11 @@
         flex: 1;
       }
     }
+  }
+
+  .errors-container {
+    width: 100%;
+
+
   }
 }
