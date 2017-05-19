@@ -7,15 +7,14 @@ class TeamShow extends React.Component {
   }
 
   render() {
-    const html = this.props.match.params.teamId === "new" ? "" : (
+
+    return (
       <section className="team-show">
         <h2 className="team-show-header">
           Tasks for {this.props.currentTeam.name}
         </h2>
       </section>
     );
-
-    return html;
   }
 }
 

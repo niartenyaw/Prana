@@ -17,14 +17,16 @@ class TeamForm extends React.Component {
   }
 
   handleChange(type) {
-    return e => ths.setState({ [type]: e.target.value })
+    return e => this.setState({ [type]: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.processForm(this.state);
   }
 
   render() {
+    console.log(this.state);
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
         <label>Team Name

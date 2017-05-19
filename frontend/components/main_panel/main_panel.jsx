@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch } from 'react-router-dom';
 import { ProRoute } from '../../util/route_util';
 import DashboardContainer from '../dashboard/dashboard_container';
 import TeamShowContainer from '../team/team_show_container';
@@ -10,9 +11,10 @@ class MainPanel extends React.Component {
         <div className="main-panel">
           <div className="inner-panel">
             <ProRoute path="/dashboard" component={DashboardContainer} />
-
-            <ProRoute exact path="/new_team" component={TeamFormContainer} />
-            <ProRoute exact path="/teams/:teamId" component={TeamShowContainer} />
+            <Switch>
+              <ProRoute exact path="/teams/new" component={TeamFormContainer} />
+              <ProRoute exact path="/teams/:teamId" component={TeamShowContainer} />
+            </Switch>
             <ProRoute exact path="/teams/:teamId/edit" component={TeamFormContainer} />
           </div>
         </div>
