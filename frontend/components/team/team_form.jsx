@@ -10,10 +10,6 @@ class TeamForm extends React.Component {
     this.handleOnBlur = this.handleOnBlur.bind(this);
   }
 
-  componentWillMount() {
-    this.props.receiveTeamErrors({ errors: [] });
-  }
-
   componentDidMount() {
     if (this.props.match.path === "/teams/new") {
       this.nameInput.focus();

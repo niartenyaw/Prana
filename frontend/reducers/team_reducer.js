@@ -48,7 +48,6 @@ const TeamReducer = (state = nullTeams, action) => {
       }
       return { allTeams, currentTeam, errors: [] };
     case RECEIVE_TEAM_ERRORS:
-      console.log(action.errors);
       return Object.assign(newState, { errors: action.errors })
     default:
       return state;

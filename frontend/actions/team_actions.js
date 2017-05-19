@@ -48,4 +48,4 @@ export const removeTeam = team => ({
 export const receiveTeamErrors = errors => ({
   type: RECEIVE_TEAM_ERRORS,
   errors
-})
+});

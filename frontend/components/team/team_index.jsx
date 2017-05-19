@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamIndexItem from './team_index_item';
+import TeamIndexItemContainer from './team_index_item_container';
 import { Link } from 'react-router-dom';
 
 class TeamIndex extends React.Component {
@@ -23,7 +23,7 @@ class TeamIndex extends React.Component {
         </div>
         <ul>
           {
-            this.props.allTeams.map(team => <TeamIndexItem
+            this.props.allTeams.map(team => <TeamIndexItemContainer
             team={team}
             key={`${team.id}${team.name}`} />)
           }
