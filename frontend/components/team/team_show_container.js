@@ -9,7 +9,7 @@ const _empty = {
 
 const mapStateToProps = (state, { match }) => {
   return {
-    currentTeam: state.teams.allTeams[match.params.teamId] || _empty,
+    current: state.teams.allTeams[match.params.teamId] || _empty,
     errors: state.teams.errors
   };
 };

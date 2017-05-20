@@ -27,7 +27,7 @@ export const deleteTeam = id => dispatch => (
 
 export const receiveTeam = team => ({
   type: RECEIVE_TEAM,
-  currentTeam: team
+  current: team
 });
 
 export const receiveTeams = teams => ({

@@ -1,23 +1,23 @@
 import React from 'react';
 
-class TeamForm extends React.Component {
+class CompForm extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.state = Object.assign({}, this.props.currentTeam);
+    this.state = Object.assign({}, this.props.current);
     this.handleChange.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
   }
 
   componentDidMount() {
-    if (this.props.match.path === "/teams/new") {
+    if (this.props.match.path === `/${this.props.type}s/new`) {
       this.nameInput.focus();
     }
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.currentTeam);
+    this.setState(newProps.current);
   }
 
   handleChange(type) {
@@ -33,27 +33,27 @@ class TeamForm extends React.Component {
 
   handleOnBlur() {
     if (this.state.id) {
-      this.props.patchTeam(this.state)
-        .fail(errors => this.props.receiveTeamErrors(errors.responseJSON));
+      this.props.patchComp(this.state)
+        .fail(errors => this.props.receiveErrors(errors.responseJSON));
     }
     else {
-      this.props.postTeam(this.state)
-        .then(resp => this.props.history.push(`/teams/${resp.currentTeam.id}`),
-          errors => this.props.receiveTeamErrors(errors.responseJSON));
+      this.props.postComp(this.state)
+        .then(resp => this.props.history.push(`/${this.props.type}s/${resp.current.id}`),
+          errors => this.props.receiveErrors(errors.responseJSON));
     }
   }
 
   render() {
-    const name = this.props.currentTeam.name === "" ? (
-      "Team"
+    const name = this.props.current.name === "" ? (
+      `${this.props.type}`
     ) : (
-      this.props.currentTeam.name
+      this.props.current.name
     );
 
     return (
-        <section className="team-form">
+        <section className={`${this.props.type}-form`}>
           <form
-            key={this.props.currentTeam.id}
+            key={this.props.current.id}
             onSubmit={this.handleSubmit} >
             <input
               className="name-input form-input"
@@ -69,4 +69,4 @@ class TeamForm extends React.Component {
   }
 }
 
-export default TeamForm;
+export default CompForm;

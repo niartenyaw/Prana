@@ -11,9 +11,9 @@ class TeamShow extends React.Component {
 
 
   handleClick() {
-    const teamName = this.props.currentTeam.name
+    const teamName = this.props.current.name
     if (confirm(`Are you sure you want to delete ${teamName}`)) {
-      this.props.deleteTeam(this.props.currentTeam.id)
+      this.props.deleteTeam(this.props.current.id)
         .then(this.props.history.push("/dashboard"));
     }
   }

@@ -10,7 +10,7 @@ const nullTeams = {
       creator_id: 0
     }
   },
-  currentTeam: {
+  current: {
     name: "",
     creator_id: 0
   },
@@ -34,19 +34,19 @@ const TeamReducer = (state = nullTeams, action) => {
     case RECEIVE_TEAM:
       const addToAllTeams = { allTeams: Object.assign(
         allTeams,
-        { [action.currentTeam.id] : action.currentTeam})
+        { [action.current.id] : action.current})
       };
       return Object.assign(
         addToAllTeams,
-        { currentTeam: action.currentTeam },
+        { current: action.current },
         blankErrors);
     case REMOVE_TEAM:
       delete allTeams[action.team.id];
-      let currentTeam = newState.currentTeam;
-      if (currentTeam.id === action.team.id) {
-        currentTeam = {};
+      let current = newState.current;
+      if (current.id === action.team.id) {
+        current = {};
       }
-      return { allTeams, currentTeam, errors: [] };
+      return { allTeams, current, errors: [] };
     case RECEIVE_TEAM_ERRORS:
       return Object.assign(newState, { errors: action.errors })
     default:
