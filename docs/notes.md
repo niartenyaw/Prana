@@ -7,3 +7,6 @@
   2. Have a nested slice errors for each top level slice to differentiate between them.
 3. Preserving state
   3. Make sure to pass the correct structure when calling action creators (was passing an object errors instead of array).
+
+## To do
+* Abstract out index and show pages from teams

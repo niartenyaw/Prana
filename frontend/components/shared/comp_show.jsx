@@ -1,7 +1,6 @@
 import React from 'react';
-import TeamFormContainer from './team_form_container';
 
-class TeamShow extends React.Component {
+class CompShow extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,21 +8,22 @@ class TeamShow extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
   handleClick() {
-    const teamName = this.props.current.name
-    if (confirm(`Are you sure you want to delete ${teamName}`)) {
-      this.props.deleteTeam(this.props.current.id)
+    const name = this.props.current.name
+    if (confirm(`Are you sure you want to delete ${name}`)) {
+      this.props.deleteComp(this.props.current.id)
         .then(this.props.history.push("/dashboard"));
     }
   }
 
   render() {
+    const CompFormContainer = this.props.form;
+    const type = this.props.type;
     return (
-      <section className="team-show">
-        <div className="team-header">
-          <TeamFormContainer />
-          {this.props.match.path === "/teams/new" ? ("") : (
+      <section className="comp-show">
+        <div className="comp-header">
+          <CompFormContainer />
+          {this.props.match.path === `/${type}s/new` ? ("") : (
             <div className="button-container">
               <button className="button" onClick={this.handleClick}>Delete</button>
             </div>
@@ -39,4 +39,4 @@ class TeamShow extends React.Component {
   }
 }
 
-export default TeamShow;
+export default CompShow;

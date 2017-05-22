@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { getAllTeams, postTeam, patchTeam, receiveTeamErrors } from '../../actions/team_actions';
-import CompForm from '../comp_form';
+import CompForm from '../shared/comp_form';
 
 const _empty = {
   name: ""
