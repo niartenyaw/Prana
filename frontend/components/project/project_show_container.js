@@ -17,7 +17,7 @@ const mapStateToProps = (state, { match }) => ({
   form: ProjectFormContainer
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, { match }) => ({
   receiveCurrent: project => dispatch(receiveProject(project)),
   deleteComp: () => dispatch(deleteProject(match.params.projectId))
 });
