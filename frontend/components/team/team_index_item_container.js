@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import TeamIndexItem from './team_index_item';
+import CompIndexItem from '../shared/comp_index_item';
 import { receiveTeamErrors } from '../../actions/team_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  team: ownProps.team
+  comp: ownProps.comp,
+  type: "team"
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -15,5 +16,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(TeamIndexItem)
+  )(CompIndexItem)
 );

@@ -1,20 +1,23 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import TeamIndex from './team_index';
+import CompIndex from '../shared/comp_index';
+import TeamIndexItemContainer from './team_index_item_container';
 import { getAllTeams } from '../../actions/team_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => ({
-  allTeams: asArray(state.teams.allTeams)
+  allComps: asArray(state.teams.allTeams),
+  CompIndexItemContainer: TeamIndexItemContainer,
+  type: "team"
 });
 
 const mapDispatchToProps = dispatch => ({
-  getAllTeams: () => dispatch(getAllTeams())
+  getAllComps: () => dispatch(getAllTeams())
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(TeamIndex)
+  )(CompIndex)
 );
