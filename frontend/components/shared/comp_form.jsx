@@ -8,6 +8,7 @@ class CompForm extends React.Component {
     this.state = Object.assign({}, this.props.current);
     this.handleChange.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +29,6 @@ class CompForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.handleOnBlur();
   }
 
   handleOnBlur() {
@@ -40,6 +40,12 @@ class CompForm extends React.Component {
       this.props.postComp(this.state)
         .then(resp => this.props.history.push(`/${this.props.type}s/${resp.current.id}`),
           errors => this.props.receiveErrors(errors.responseJSON));
+    }
+  }
+
+  handleKeyPress(e) {
+    if (e.key === "Enter") {
+      this.nameInput.blur();
     }
   }
 
@@ -59,6 +65,7 @@ class CompForm extends React.Component {
               className="name-input form-input"
               ref={(input) => { this.nameInput = input; }}
               type="text"
+              onKeyPress={this.handleKeyPress}
               onChange={this.handleChange("name")}
               onBlur={this.handleOnBlur}
               placeholder={name}
