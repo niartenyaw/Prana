@@ -21,7 +21,9 @@ class CompIndex extends React.Component {
         <div className="comp-index-header">
           <h4>{`${type}s`}</h4>
           <Link to={`/${type}s/new`}>
-            <img className="plus-button" src="https://res.cloudinary.com/dbxwu45pr/image/upload/v1495232281/white-plus-button_yvdzi8.png" />
+            <img
+              className="plus-button"
+              src="https://res.cloudinary.com/dbxwu45pr/image/upload/v1495232281/white-plus-button_yvdzi8.png" />
             </Link>
         </div>
         <ul>

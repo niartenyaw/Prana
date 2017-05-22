@@ -29,7 +29,6 @@ class CompShow extends React.Component {
   render() {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
-    console.log(this.props);
     return (
       <section className="comp-show">
         <div className="comp-header">

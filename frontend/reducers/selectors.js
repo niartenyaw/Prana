@@ -13,5 +13,6 @@ export const selectTeamProjects = (teamId, projects) => {
       teamProjects.push(projects[i]);
     }
   }
+
   return teamProjects;
 };

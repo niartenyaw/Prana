@@ -7,7 +7,7 @@ import { selectTeamProjects } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => {
   return {
-    allComps: selectTeamProjects(state.projects.current.id, state.projects.allProjects),
+    allComps: selectTeamProjects(state.teams.current.id, state.projects.allProjects),
     CompIndexItemContainer: ProjectIndexItemContainer,
     type: 'project'
   };
