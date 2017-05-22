@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { deleteTeam } from '../../actions/team_actions';
+import { receiveTeam, deleteTeam } from '../../actions/team_actions';
 import CompShow from '../shared/comp_show';
 import TeamFormContainer from './team_form_container';
 
@@ -18,6 +18,7 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = (dispatch, { match }) => ({
+  receiveCurrent: team => dispatch(receiveTeam(team)),
   deleteComp: () => dispatch(deleteTeam(match.params.teamId))
 });
 
