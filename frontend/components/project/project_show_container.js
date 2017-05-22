@@ -19,7 +19,7 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   receiveCurrent: project => dispatch(receiveProject(project)),
-  deleteComp: () => dispatch(deleteProject(match.params.teamId))
+  deleteComp: () => dispatch(deleteProject(match.params.projectId))
 });
 
 export default withRouter(

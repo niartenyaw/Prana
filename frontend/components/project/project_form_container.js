@@ -7,16 +7,22 @@ const _empty = {
   name: ""
 };
 
-const mapStateToProps = (state, { match }) => ({
-  current: state.projects.allProjects[match.params.projectId] || _empty,
-  type: "project"
-});
+const mapStateToProps = (state, { match }) => {
+  const current = state.projects.allProjects[match.params.projectId] || _empty;
+  
+  return {
+    current: Object.assign(current, { team_id: state.teams.current.id }),
+    type: "project"
+  };
+};
 
-const mapDispatchToProps = (dispatch, { match }) => ({
-  patchComp: project => dispatch(patchProject(project)),
-  postComp: project => dispatch(postProject(project)),
-  receiveErrors: errors => dispatch(receiveProjectErrors(errors))
-});
+const mapDispatchToProps = (dispatch, { match }) => {
+  return {
+    patchComp: project => dispatch(patchProject(project)),
+    postComp: project => dispatch(postProject(project)),
+    receiveErrors: errors => dispatch(receiveProjectErrors(errors))
+  };
+};
 
 export default withRouter(
   connect(
