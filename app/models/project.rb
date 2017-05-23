@@ -16,4 +16,7 @@ class Project < ApplicationRecord
     through: :project_memberships,
     source: :user
 
+  # Tasks
+  has_many :tasks
+
 end

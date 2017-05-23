@@ -38,7 +38,11 @@ class CompForm extends React.Component {
     }
     else {
       this.props.postComp(this.state)
-        .then(resp => this.props.history.push(`/${this.props.type}s/${resp.current.id}`),
+        .then(resp => {
+          if (this.props.type !== "task") {
+            this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
+          }
+        },
           errors => this.props.receiveErrors(errors.responseJSON));
     }
   }

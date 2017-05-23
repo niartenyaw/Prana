@@ -25,10 +25,20 @@ class User < ApplicationRecord
     class_name: :Project
 
   has_many :project_memberships
-  
+
   has_many :projects,
     through: :project_memberships,
     source: :project
+
+  # Tasks
+  has_many :created_tasks,
+    foreign_key: :creator_id,
+    class_name: :Task
+
+  has_many :assigned_tasks,
+    foreign_key: :assignee_id,
+    class_name: :Task
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

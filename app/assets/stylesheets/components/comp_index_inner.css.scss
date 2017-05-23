@@ -1,11 +1,12 @@
 .inner-index-container {
+  margin-top: 25px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 
   .task-index {
-    width: 93%;
+    width: 93.2%;
     padding: 0 10px;
     ul {
       .task-index-item {

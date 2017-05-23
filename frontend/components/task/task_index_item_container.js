@@ -4,11 +4,18 @@ import CompIndexItem from '../shared/comp_index_item';
 import { receiveTaskErrors } from '../../actions/task_actions';
 import TaskFormContainer from './task_form_container';
 
-const mapStateToProps = (state, ownProps) => ({
-  comp: ownProps.comp,
-  type: "task",
-  Container: TaskFormContainer
-});
+const mapStateToProps = (state, ownProps) => {
+  let comp = ownProps.comp;
+  if (ownProps.projectId) {
+    comp = undefined;
+  }
+  return {
+    comp,
+    type: "task",
+    Container: TaskFormContainer,
+    projectId: ownProps.projectId
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   resetErrors: () => dispatch(receiveTaskErrors([]))

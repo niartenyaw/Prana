@@ -16,6 +16,7 @@ class CompIndex extends React.Component {
     const CompIndexItemContainer = this.props.CompIndexItemContainer;
     const type = this.props.type;
     const title = type.charAt(0).toUpperCase() + type.slice(1);
+    const projectId = this.props.match.params.projectId;
     return (
       <section className={`${type}-index`}>
         { type === "task" ? (
@@ -36,6 +37,11 @@ class CompIndex extends React.Component {
             comp={comp}
             key={`${type}${comp.id}${comp.name}`} />)
           }
+          { type === "task" && projectId ? (
+            <CompIndexItemContainer projectId={projectId} />
+          ) : (
+            ""
+          )}
         </ul>
       </section>
     );

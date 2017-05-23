@@ -51,9 +51,9 @@ All sections will be performed in the following order:
 **Objective:** Complete the production `README`
 
 ## Future features
-* Comments
-* Mailer for invites
 * Drag and drop ordering
+* Mailer for invites
+* Comments
 * Motion
 * Calendar
 * Attachments/Files
