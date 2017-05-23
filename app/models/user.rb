@@ -14,7 +14,7 @@ class User < ApplicationRecord
     class_name: :Team
 
   has_many :team_memberships
-  
+
   has_many :teams,
     through: :team_memberships,
     source: :team
@@ -24,6 +24,11 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     class_name: :Project
 
+  has_many :project_memberships
+  
+  has_many :projects,
+    through: :project_memberships,
+    source: :project
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
