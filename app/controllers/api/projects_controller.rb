@@ -2,7 +2,6 @@ class Api::ProjectsController < ApplicationController
   before_filter :ensure_logged_in!
 
   def index
-    @projects = Project.all
   end
 
   def show
