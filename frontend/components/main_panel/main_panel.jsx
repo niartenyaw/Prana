@@ -5,6 +5,7 @@ import DashboardContainer from '../dashboard/dashboard_container';
 import TeamShowContainer from '../team/team_show_container';
 import ProjectShowContainer from '../project/project_show_container';
 
+
 class MainPanel extends React.Component {
     render() {
       return (

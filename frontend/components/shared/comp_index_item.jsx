@@ -16,13 +16,15 @@ class CompIndexItem extends React.Component {
 
   render() {
     const comp = this.props.comp;
+    const type = this.props.type;
+    const Container = this.props.Container;
     return (
-      <li className="comp-index-item">
-        { this.props.type === "task" ? (
-          <button onClick={this.handleClick}>{comp.name}</button>
+      <li className={`${type}-index-item`}>
+        { type === "task" ? (
+          <Container comp={this.props.comp} />
         ) : (
           <button onClick={this.handleClick}>{comp.name}</button>
-        )}
+        ) }
       </li>
     );
   }

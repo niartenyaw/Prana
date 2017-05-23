@@ -1,0 +1,16 @@
+.inner-index-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .task-index {
+    width: 100%;
+    padding-left: 10px;
+    ul {
+      .task-index-item {
+        margin: 10px 0;
+      }
+    }
+  }
+}

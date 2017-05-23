@@ -17,7 +17,7 @@ class CompIndex extends React.Component {
     const type = this.props.type;
     const title = type.charAt(0).toUpperCase() + type.slice(1);
     return (
-      <section className="comp-index">
+      <section className={`${type}-index`}>
         { type === "task" ? (
           ""
         ) : (

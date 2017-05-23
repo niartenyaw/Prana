@@ -37,12 +37,17 @@
 
   .form-input {
     border-top: 3px solid white;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid $gray;
+  }
+
+  .form-input:hover {
+    border-top: 3px solid $gray;
+    border-bottom: 3px solid $gray;
   }
 
   .form-input:focus {
     outline: none;
-    border-top: 3px solid $gray;
-    border-bottom: 1px solid $gray;
+    border-top: 3px solid $medium-blue;
+    border-bottom: 3px solid $medium-blue;
   }
 }

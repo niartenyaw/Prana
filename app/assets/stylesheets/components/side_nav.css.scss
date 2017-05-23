@@ -9,48 +9,4 @@
   align-content: center;
   background-color: $dark-blue;
 
-  .comp-index {
-    width: 100%;
-    margin: 15px 0;
-    .comp-index-header {
-      margin-left: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      h4 {
-        color: white;
-      }
-      a {
-        margin-right: 20px;
-        display: flex;
-        align-items: center;
-        img {
-          opacity: 0.7;
-        }
-        img:hover {
-          opacity: 1.0;
-        }
-      }
-    }
-  }
-
-  ul {
-    width: 100%;
-    li {
-      width: 100%;
-      button {
-        padding: 3px 0;
-        padding-left: 30px;
-        padding-right: 10px;
-        background-color: inherit;
-        text-align: left;
-        outline: none;
-        width: 100%;
-        color: white;
-      }
-    }
-    li:hover {
-      background-color: $light-blue;
-    }
-  }
 }
