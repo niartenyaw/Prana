@@ -5,11 +5,41 @@
   align-items: flex-start;
 
   .task-index {
-    width: 100%;
-    padding-left: 10px;
+    width: 93%;
+    padding: 0 10px;
     ul {
       .task-index-item {
-        margin: 10px 0;
+        margin: -1px 0;
+        .task-form {
+          border-top: 1px solid $gray;
+          border-bottom: 1px solid $gray;
+
+          .task-form-input {
+            width: 100%;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+          }
+          .task-form-input:hover {
+            border-top: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+          }
+          .task-form-input:focus {
+            outline: none;
+            border-top: 1px solid $medium-blue;
+            border-bottom: 1px solid $medium-blue;
+
+          }
+          .task-form-input:focus ~ .task-form {
+            border: 0;
+          }
+
+          .task-name-input {
+            width: 100%;
+            font-size: 18px;
+            padding: 3px;
+            padding-left: 10px;
+          }
+        }
       }
     }
   }

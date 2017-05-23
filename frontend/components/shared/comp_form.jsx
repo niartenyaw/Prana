@@ -61,13 +61,15 @@ class CompForm extends React.Component {
       this.props.current.name
     );
 
+    const type = this.props.type;
+
     return (
-        <section className={`${this.props.type}-form`}>
+        <section className={`${type}-form`}>
           <form
             key={this.props.current.id}
             onSubmit={this.handleSubmit} >
             <input
-              className="name-input form-input"
+              className={`${type}-name-input ${type}-form-input`}
               ref={(input) => { this.nameInput = input; }}
               type="text"
               onKeyDown={this.handleKeyDown}

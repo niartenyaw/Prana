@@ -29,25 +29,4 @@
     font-size: 22px;
     font-weight: normal;
   }
-
-  .plus-button {
-    width: 30px;
-    height: 30px;
-  }
-
-  .form-input {
-    border-top: 3px solid white;
-    border-bottom: 3px solid $gray;
-  }
-
-  .form-input:hover {
-    border-top: 3px solid $gray;
-    border-bottom: 3px solid $gray;
-  }
-
-  .form-input:focus {
-    outline: none;
-    border-top: 3px solid $medium-blue;
-    border-bottom: 3px solid $medium-blue;
-  }
 }
