@@ -18,7 +18,11 @@ class CompIndexItem extends React.Component {
     const comp = this.props.comp;
     return (
       <li className="comp-index-item">
-        <button onClick={this.handleClick}>{comp.name}</button>
+        { this.props.type === "task" ? (
+          <button onClick={this.handleClick}>{comp.name}</button>
+        ) : (
+          <button onClick={this.handleClick}>{comp.name}</button>
+        )}
       </li>
     );
   }

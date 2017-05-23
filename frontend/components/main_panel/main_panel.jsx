@@ -14,11 +14,11 @@ class MainPanel extends React.Component {
             <Switch>
               <ProRoute exact path="/teams/new"
                 key="new" component={TeamShowContainer} />
-              <ProRoute exact path="/teams/:teamId"
+              <ProRoute path="/teams/:teamId"
                 key="edit" component={TeamShowContainer} />
               <ProRoute exact path="/projects/new"
                 key="new" component={ProjectShowContainer} />
-              <ProRoute exact path="/projects/:projectId"
+              <ProRoute path="/projects/:projectId"
                 key="edit" component={ProjectShowContainer} />
             </Switch>
           </div>

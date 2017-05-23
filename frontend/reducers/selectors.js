@@ -16,3 +16,16 @@ export const selectTeamProjects = (teamId, projects) => {
 
   return teamProjects;
 };
+
+export const selectTasks = (varId, varName, tasks) => {
+  tasks = asArray(tasks);
+  const selectedTasks = [];
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i][varName] === Number(varId)) {
+      selectedTasks.push(tasks[i]);
+    }
+  }
+
+  return selectedTasks;
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskIndexContainer from '../task/task_index_container';
 
 class CompShow extends React.Component {
 
@@ -29,6 +30,7 @@ class CompShow extends React.Component {
   render() {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
+
     return (
       <section className="comp-show">
         <div className="comp-header">
@@ -43,6 +45,13 @@ class CompShow extends React.Component {
           <ul className="errors-list">
             {this.props.errors.map(err => <li key={err}>{err}</li>)}
           </ul>
+        </div>
+        <div className="inner-index-container">
+          { type === "team" || type === "project" || type === "user" ? (
+            <TaskIndexContainer type={type} />
+          ) : (
+            ""
+          ) }
         </div>
       </section>
     );
