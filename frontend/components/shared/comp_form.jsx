@@ -9,6 +9,7 @@ class CompForm extends React.Component {
     this.handleChange.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleFinish = this.handleFinish.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +59,10 @@ class CompForm extends React.Component {
     }
   }
 
+  handleFinish(e) {
+    this.setState({ finished: true }, () => this.handleOnBlur())
+  }
+
   render() {
     const name = this.props.current.name === "" ? (
       `${this.props.type}`
@@ -66,12 +71,21 @@ class CompForm extends React.Component {
     );
 
     const type = this.props.type;
+    const currId = this.props.current.id;
 
     return (
-        <section className={`${type}-form`}>
+        <section className={`${type}-form-container`}>
           <form
-            key={this.props.current.id}
+            className="task-form"
+            key={currId}
             onSubmit={this.handleSubmit} >
+            { type === "task" && currId ? (
+              <input
+                className="finished-button"
+                type="checkbox"
+                checked={this.state.finished}
+                onChange={this.handleFinish} />
+            ) : ("")}
             <input
               className={`${type}-name-input ${type}-form-input`}
               ref={(input) => { this.nameInput = input; }}

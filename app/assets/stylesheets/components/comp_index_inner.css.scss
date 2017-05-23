@@ -14,9 +14,10 @@
         .task-form {
           border-top: 1px solid $gray;
           border-bottom: 1px solid $gray;
+          display: flex;
+          align-items: center;
 
           .task-form-input {
-            width: 100%;
             border-top: 1px solid white;
             border-bottom: 1px solid white;
           }
@@ -39,6 +40,10 @@
             font-size: 18px;
             padding: 3px;
             padding-left: 10px;
+          }
+
+          .finished-button {
+
           }
         }
       }
