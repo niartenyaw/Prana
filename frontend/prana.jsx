@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-
 import * as Actions from './actions/task_actions';
 
 window.getAllTasks = Actions.getAllTasks;
 window.postTask = Actions.postTask;
 window.patchTask = Actions.patchTask;
 window.deleteTask = Actions.deleteTask;
-
+window.receiveTaskErrors = Actions.receiveTaskErrors;
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
