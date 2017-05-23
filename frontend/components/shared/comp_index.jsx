@@ -30,7 +30,7 @@ class CompIndex extends React.Component {
           {
             this.props.allComps.map(comp => <CompIndexItemContainer
             comp={comp}
-            key={`${comp.id}${comp.name}`} />)
+            key={`${type}${comp.id}${comp.name}`} />)
           }
         </ul>
       </section>

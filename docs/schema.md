@@ -34,7 +34,7 @@
 * `modified_at`
 
 ### Tasks
-* `title`
+* `name`
 * `description`
 * `finished`
 * `creator_id`
