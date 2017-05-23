@@ -38,7 +38,7 @@ class CompIndex extends React.Component {
             key={`${type}${comp.id}${comp.name}`} />)
           }
           { type === "task" && projectId ? (
-            <CompIndexItemContainer projectId={projectId} />
+            <CompIndexItemContainer key={Date.now()} projectId={projectId} />
           ) : (
             ""
           )}
