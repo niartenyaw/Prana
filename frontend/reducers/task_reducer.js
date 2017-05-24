@@ -17,7 +17,8 @@ const _nullTasks = {
   allTasks: {
     0: _nullTask
   },
-  current: _nullTask
+  current: _nullTask,
+  errors: []
 };
 
 const TaskReducer = (state = _nullTasks, action) => {

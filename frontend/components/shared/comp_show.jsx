@@ -31,10 +31,10 @@ class CompShow extends React.Component {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
 
-    return (
+    const show = (
       <section className="comp-show">
         <div className="comp-header">
-          <CompFormContainer />
+          <CompFormContainer type={type} />
           {
             this.props.match.path === `/${type}s/new` ? ("") : (
               <div className="button-container">
@@ -47,7 +47,9 @@ class CompShow extends React.Component {
         </div>
         <div className="errors-container">
           <ul className="errors-list">
-            {this.props.errors.map(err => <li key={err}>{err}</li>)}
+            {
+              this.props.errors.map(err => <li key={err}>{err}</li>)
+            }
           </ul>
         </div>
         <div className="inner-index-container">
@@ -59,6 +61,16 @@ class CompShow extends React.Component {
         </div>
       </section>
     );
+
+    if (type === "taskdetail") {
+      return (
+        <div className="inner-panel">
+          { show }
+        </div>
+      );
+    }
+    
+    return show;
   }
 }
 

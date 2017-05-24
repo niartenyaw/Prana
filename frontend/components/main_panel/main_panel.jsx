@@ -27,11 +27,11 @@ class MainPanel extends React.Component {
             <ProRoute path="/projects/:projectId"
               key="edit" component={ProjectShowContainer} />
           </Switch>
-          <ProRoute exact path="/teams/:teamId/tasks/:taskId"
-            component={TaskShowContainer} />
-          <ProRoute exact path="/projects/:projectId/tasks/:taskId"
-            component={TaskShowContainer} />
         </div>
+        <ProRoute exact path="/teams/:teamId/tasks/:taskId"
+          component={TaskShowContainer} />
+        <ProRoute exact path="/projects/:projectId/tasks/:taskId"
+          component={TaskShowContainer} />
       </div>
     );
   }

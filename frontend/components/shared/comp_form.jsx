@@ -36,12 +36,15 @@ class CompForm extends React.Component {
   handleOnBlur() {
     if (this.state.id) {
       this.props.patchComp(this.state)
-        .fail(errors => this.props.receiveErrors(errors.responseJSON));
+        .fail(errors => {
+          this.props.receiveErrors(errors.responseJSON);
+          this.setState()
+        });
     }
     else {
       this.props.postComp(this.state)
         .then(resp => {
-          if (this.props.type !== "task") {
+          if (this.props.type !== "task" || "taskdetail") {
             this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
           }
         },
@@ -49,15 +52,17 @@ class CompForm extends React.Component {
     }
   }
 
-  handleKeyDown(e) {
-    if (e.key === "Enter") {
-      this.nameInput.blur();
-    }
+  handleKeyDown(type, input) {
+    return e => {
+      if (e.key === "Enter") {
+        input.blur();
+      }
 
-    if (e.key === "Escape") {
-      this.setState({ name: this.props.current.name },
-        () => this.nameInput.blur());
-    }
+      if (e.key === "Escape") {
+        this.setState({ [type]: this.props.current[type] },
+          () => input.blur());
+      }
+    };
   }
 
   handleFocus() {
@@ -90,7 +95,7 @@ class CompForm extends React.Component {
               className={`${type}-name-input ${type}-form-input`}
               ref={(input) => { this.nameInput = input; }}
               type="text"
-              onKeyDown={this.handleKeyDown}
+              onKeyDown={this.handleKeyDown("name", this.nameInput)}
               onChange={this.handleChange("name")}
               onFocus={this.handleFocus}
               onBlur={this.handleOnBlur}
@@ -108,7 +113,15 @@ class CompForm extends React.Component {
               {
                 type === "taskdetail" ? (
                   <input
-                    className= />
+                    className={`${type}-description-input ${type}-form-input`}
+                    ref={(input) => { this.descInput = input; }}
+                    type="text"
+                    onKeyDown={this.handleKeyDown("description", this.descInput)}
+                    onChange={this.handleChange("description")}
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleOnBlur}
+                    placeholder="description"
+                    value={this.state.description} />
                 ) : ("")
               }
           </form>

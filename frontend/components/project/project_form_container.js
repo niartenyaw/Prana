@@ -7,12 +7,12 @@ const _empty = {
   name: ""
 };
 
-const mapStateToProps = (state, { match }) => {
-  const current = state.projects.allProjects[match.params.projectId] || _empty;
-  
+const mapStateToProps = (state, ownProps) => {
+  const current = state.projects.allProjects[ownProps.match.params.projectId] || _empty;
+
   return {
     current: Object.assign(current, { team_id: state.teams.current.id }),
-    type: "project"
+    type: ownProps.type
   };
 };
 
