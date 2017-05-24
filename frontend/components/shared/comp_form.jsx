@@ -88,31 +88,33 @@ class CompForm extends React.Component {
     return (
         <section className={`${type}-form-container`}>
           <form
-            className="task-form"
+            className={`${type}-form`}
             key={currId}
             onSubmit={this.handleSubmit} >
-            <input
-              className={`${type}-name-input ${type}-form-input`}
-              ref={(input) => { this.nameInput = input; }}
-              type="text"
-              onKeyDown={this.handleKeyDown("name", this.nameInput)}
-              onChange={this.handleChange("name")}
-              onFocus={this.handleFocus}
-              onBlur={this.handleOnBlur}
-              placeholder={name}
-              value={this.state.name} />
-              {
-                type === "task" && currId ? (
-                  <input
-                    className="finished-button"
-                    type="checkbox"
-                    checked={this.state.finished}
-                    onChange={this.handleFinish} />
-                ) : ("")
-              }
+            <div className={`${type}-form-header`}>
+              <input
+                className={`${type}-name-input ${type}-form-input`}
+                ref={(input) => { this.nameInput = input; }}
+                type="text"
+                onKeyDown={this.handleKeyDown("name", this.nameInput)}
+                onChange={this.handleChange("name")}
+                onFocus={this.handleFocus}
+                onBlur={this.handleOnBlur}
+                placeholder={name}
+                value={this.state.name} />
+                {
+                  (type === "task" || type === "taskdetail") && currId ? (
+                    <input
+                      className="finished-button"
+                      type="checkbox"
+                      checked={this.state.finished}
+                      onChange={this.handleFinish} />
+                  ) : ("")
+                }
+            </div>
               {
                 type === "taskdetail" ? (
-                  <input
+                  <textarea
                     className={`${type}-description-input ${type}-form-input`}
                     ref={(input) => { this.descInput = input; }}
                     type="text"

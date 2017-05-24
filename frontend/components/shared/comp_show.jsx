@@ -32,8 +32,8 @@ class CompShow extends React.Component {
     const type = this.props.type;
 
     const show = (
-      <section className="comp-show">
-        <div className="comp-header">
+      <section className={`${type}-show`}>
+        <div className={`${type}-header`}>
           <CompFormContainer type={type} comp={this.props.current} />
           {
             this.props.match.path === `/${type}s/new` ? ("") : (
@@ -52,13 +52,13 @@ class CompShow extends React.Component {
             }
           </ul>
         </div>
-        <div className="inner-index-container">
           { type === "team" || type === "project" || type === "user" ? (
-            <TaskIndexContainer type={type} />
+            <div className="inner-index-container">
+              <TaskIndexContainer type={type} />
+            </div>
           ) : (
             ""
           ) }
-        </div>
       </section>
     );
 
