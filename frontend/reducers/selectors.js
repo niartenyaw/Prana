@@ -9,7 +9,7 @@ export const selectTeamProjects = (teamId, projects) => {
   const teamProjects = [];
 
   for (let i = 0; i < projects.length; i++) {
-    if (projects[i].team_id === teamId) {
+    if (projects[i].team_id === Number(teamId)) {
       teamProjects.push(projects[i]);
     }
   }
@@ -23,7 +23,7 @@ export const selectProjectTasks = (projectId, tasks) => {
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (task["project_id"] === Number(projectId) && !task.finished) {
+    if (!task.finished && task["project_id"] === Number(projectId)) {
       selectedTasks.push(task);
     }
   }
@@ -31,6 +31,29 @@ export const selectProjectTasks = (projectId, tasks) => {
   return selectedTasks;
 };
 
-export const selectTeamTasks = (varId, projects, tasks) => {
-  return asArray(tasks);
+export const selectTeamTasks = (teamId, projects, tasks) => {
+
+  const allProjectIds = Object.keys(projects);
+
+  const teamProjectIds = [];
+
+  for (let i = 0; i < allProjectIds.length; i++) {
+    const currProj = projects[allProjectIds[i]];
+    if (currProj.team_id === Number(teamId)) {
+      teamProjectIds.push(currProj.id);
+    }
+  }
+
+  tasks = asArray(tasks);
+
+  const selectedTasks = [];
+
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    if (!task.finished && teamProjectIds.includes(task.project_id)) {
+      selectedTasks.push(task);
+    }
+  }
+
+  return selectedTasks;
 };

@@ -28,16 +28,18 @@ const selectTasks = (type, params, state) => {
 
     case "team":
 
-      return selectTeamTasks(
+      const selected = selectTeamTasks(
         selectorId(params, type),
         state.projects.allProjects,
         state.tasks.allTasks);
+      return selected;
   }
 };
 
 const mapStateToProps = (state, ownProps) => {
+  const comps = selectTasks(ownProps.type, ownProps.match.params, state);
   return {
-    allComps: selectTasks(ownProps.type, ownProps.match.params, state),
+    allComps: comps,
     CompIndexItemContainer: TaskIndexItemContainer,
     type: 'task'
   };
