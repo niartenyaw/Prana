@@ -9,6 +9,7 @@ class CompForm extends React.Component {
     this.handleChange.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.handleFinish = this.handleFinish.bind(this);
   }
 
@@ -59,6 +60,12 @@ class CompForm extends React.Component {
     }
   }
 
+  handleFocus() {
+    if (this.props.type === "task" && this.props.current.id) {
+      this.props.history.push(`${this.props.match.url}/tasks/${this.props.current.id}`);
+    }
+  }
+
   handleFinish(e) {
     this.setState({ finished: true }, () => this.handleOnBlur())
   }
@@ -85,6 +92,7 @@ class CompForm extends React.Component {
               type="text"
               onKeyDown={this.handleKeyDown}
               onChange={this.handleChange("name")}
+              onFocus={this.handleFocus}
               onBlur={this.handleOnBlur}
               placeholder={name}
               value={this.state.name} />
