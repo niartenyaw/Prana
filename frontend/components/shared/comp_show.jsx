@@ -30,6 +30,7 @@ class CompShow extends React.Component {
   render() {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
+    console.log(this.props.errors);
 
     const show = (
       <section className={`${type}-show`}>
@@ -48,7 +49,9 @@ class CompShow extends React.Component {
         <div className="errors-container">
           <ul className="errors-list">
             {
-              this.props.errors.map(err => <li key={err}>{err}</li>)
+              this.props.errors ? (
+                this.props.errors.map(err => <li key={err}>{err}</li>)
+              ) : ("")
             }
           </ul>
         </div>

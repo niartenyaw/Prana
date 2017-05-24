@@ -100,7 +100,7 @@ class CompForm extends React.Component {
                 onChange={this.handleChange("name")}
                 onFocus={this.handleFocus}
                 onBlur={this.handleOnBlur}
-                placeholder={name}
+                placeholder={name === "taskdetail" ? "task" : name }
                 value={this.state.name} />
                 {
                   (type === "task" || type === "taskdetail") && currId ? (

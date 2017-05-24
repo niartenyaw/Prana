@@ -9,7 +9,6 @@ const _emptyTask = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     current: state.tasks.allTasks[ownProps.match.params.taskId] || _emptyTask,
     type: "taskdetail",

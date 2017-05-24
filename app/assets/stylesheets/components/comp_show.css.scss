@@ -58,9 +58,11 @@
     }
 
     .taskdetail-description-input {
+      resize: none;
       width: 100%;
       height: 200px;
       border: 2px solid white;
+      padding: 5px;
       font-size: 16px;
       font-family: $text-primary, $text-secondary;
     }
