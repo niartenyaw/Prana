@@ -8,6 +8,7 @@ const _empty = {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
   const current = ownProps.comp || Object.assign(
     _empty,
     { project_id: ownProps.projectId }
@@ -15,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     current,
-    type: "task"
+    type: ownProps.type
   };
 };
 

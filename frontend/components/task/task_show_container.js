@@ -9,9 +9,9 @@ const _emptyTask = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.tasks);
+  console.log(state);
   return {
-    comp: state.tasks.allTasks[ownProps.match.params.taskId] || _emptyTask,
+    current: state.tasks.allTasks[ownProps.match.params.taskId] || _emptyTask,
     type: "taskdetail",
     form: TaskFormContainer,
     errors: state.tasks.errors

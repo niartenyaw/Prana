@@ -44,7 +44,7 @@ class CompForm extends React.Component {
     else {
       this.props.postComp(this.state)
         .then(resp => {
-          if (this.props.type !== "task" || "taskdetail") {
+          if (this.props.type !== "task") {
             this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
           }
         },

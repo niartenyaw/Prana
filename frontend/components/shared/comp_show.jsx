@@ -34,7 +34,7 @@ class CompShow extends React.Component {
     const show = (
       <section className="comp-show">
         <div className="comp-header">
-          <CompFormContainer type={type} />
+          <CompFormContainer type={type} comp={this.props.current} />
           {
             this.props.match.path === `/${type}s/new` ? ("") : (
               <div className="button-container">
@@ -69,7 +69,7 @@ class CompShow extends React.Component {
         </div>
       );
     }
-    
+
     return show;
   }
 }

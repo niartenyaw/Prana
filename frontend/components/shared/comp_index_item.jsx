@@ -21,7 +21,7 @@ class CompIndexItem extends React.Component {
     return (
       <li className={`${type}-index-item`}>
         { type === "task" ? (
-          <Container comp={this.props.comp} projectId={this.props.projectId} />
+          <Container type={type} comp={this.props.comp} projectId={this.props.projectId} />
         ) : (
           <button onClick={this.handleClick}>{comp.name}</button>
         ) }
