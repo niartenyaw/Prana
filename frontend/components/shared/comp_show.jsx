@@ -35,11 +35,15 @@ class CompShow extends React.Component {
       <section className="comp-show">
         <div className="comp-header">
           <CompFormContainer />
-          {this.props.match.path === `/${type}s/new` ? ("") : (
-            <div className="button-container">
-              <button className="button" onClick={this.handleClick}>Delete</button>
-            </div>
-          )}
+          {
+            this.props.match.path === `/${type}s/new` ? ("") : (
+              <div className="button-container">
+                <button
+                  className="button"
+                  onClick={this.handleClick}>Delete</button>
+              </div>
+            )
+          }
         </div>
         <div className="errors-container">
           <ul className="errors-list">

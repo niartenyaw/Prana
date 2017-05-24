@@ -96,13 +96,21 @@ class CompForm extends React.Component {
               onBlur={this.handleOnBlur}
               placeholder={name}
               value={this.state.name} />
-              { type === "task" && currId ? (
+              {
+                type === "task" && currId ? (
                   <input
                     className="finished-button"
                     type="checkbox"
                     checked={this.state.finished}
                     onChange={this.handleFinish} />
-              ) : ("")}
+                ) : ("")
+              }
+              {
+                type === "taskdetail" ? (
+                  <input
+                    className= />
+                ) : ("")
+              }
           </form>
         </section>
     );

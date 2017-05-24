@@ -4,6 +4,7 @@ import { ProRoute } from '../../util/route_util';
 import DashboardContainer from '../dashboard/dashboard_container';
 import TeamShowContainer from '../team/team_show_container';
 import ProjectShowContainer from '../project/project_show_container';
+import TaskShowContainer from '../task/task_show_container';
 
 class MainPanel extends React.Component {
 
@@ -26,6 +27,10 @@ class MainPanel extends React.Component {
             <ProRoute path="/projects/:projectId"
               key="edit" component={ProjectShowContainer} />
           </Switch>
+          <ProRoute exact path="/teams/:teamId/tasks/:taskId"
+            component={TaskShowContainer} />
+          <ProRoute exact path="/projects/:projectId/tasks/:taskId"
+            component={TaskShowContainer} />
         </div>
       </div>
     );

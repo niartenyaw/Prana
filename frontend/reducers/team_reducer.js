@@ -30,26 +30,40 @@ const TeamReducer = (state = nullTeams, action) => {
 
   switch(action.type) {
     case RECEIVE_TEAMS:
+
       return Object.assign({}, newState, { allTeams: action.teams });
+
     case RECEIVE_TEAM:
+
+      if (allTeams[undefined]) {
+        delete allTeams[undefined];
+      }
       const addToAllTeams = { allTeams: Object.assign(
         allTeams,
         { [action.current.id] : action.current})
       };
+
       return Object.assign(
         addToAllTeams,
         { current: action.current },
         blankErrors);
+
     case REMOVE_TEAM:
+
       delete allTeams[action.team.id];
       let current = newState.current;
       if (current.id === action.team.id) {
         current = {};
       }
+
       return { allTeams, current, errors: [] };
+
     case RECEIVE_TEAM_ERRORS:
-      return Object.assign(newState, { errors: action.errors })
+
+      return Object.assign(newState, { errors: action.errors });
+
     default:
+
       return state;
   }
 };
