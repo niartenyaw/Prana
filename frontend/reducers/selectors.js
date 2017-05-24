@@ -3,6 +3,7 @@ export const asArray = obj => {
   return Object.keys(obj).map(key => obj[key]);
 };
 
+
 export const selectTeamProjects = (teamId, projects) => {
   projects = asArray(projects);
 
@@ -17,6 +18,7 @@ export const selectTeamProjects = (teamId, projects) => {
   return teamProjects;
 };
 
+
 export const selectProjectTasks = (projectId, tasks) => {
   tasks = asArray(tasks);
   const selectedTasks = [];
@@ -30,6 +32,7 @@ export const selectProjectTasks = (projectId, tasks) => {
 
   return selectedTasks;
 };
+
 
 export const selectTeamTasks = (teamId, projects, tasks) => {
 
@@ -51,6 +54,21 @@ export const selectTeamTasks = (teamId, projects, tasks) => {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     if (!task.finished && teamProjectIds.includes(task.project_id)) {
+      selectedTasks.push(task);
+    }
+  }
+
+  return selectedTasks;
+};
+
+export const selectUserTasks = (userId, tasks) => {
+  tasks = asArray(tasks);
+
+  const selectedTasks = [];
+
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    if (!task.finished && task.assignee_id === userId) {
       selectedTasks.push(task);
     }
   }

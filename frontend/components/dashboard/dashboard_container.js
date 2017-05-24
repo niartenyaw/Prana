@@ -4,7 +4,8 @@ import Dashboard from './dashboard';
 import { getAllTeams } from '../../actions/team_actions';
 
 const mapStateToProps = (state, { match }) => ({
-  teams: state.teams
+  teams: state.teams,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
