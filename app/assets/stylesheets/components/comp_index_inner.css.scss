@@ -15,9 +15,15 @@
           border-top: 1px solid $gray;
           border-bottom: 1px solid $gray;
           display: flex;
+          flex-direction: row-reverse;
           align-items: center;
 
+          .finished-button:hover {
+            cursor: pointer;
+          }
+
           .task-form-input {
+            margin-left: -20px;
             border-top: 1px solid white;
             border-bottom: 1px solid white;
           }
@@ -39,11 +45,7 @@
             width: 100%;
             font-size: 18px;
             padding: 3px;
-            padding-left: 10px;
-          }
-
-          .finished-button {
-
+            padding-left: 30px;
           }
         }
       }

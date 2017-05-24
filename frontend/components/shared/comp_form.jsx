@@ -79,13 +79,6 @@ class CompForm extends React.Component {
             className="task-form"
             key={currId}
             onSubmit={this.handleSubmit} >
-            { type === "task" && currId ? (
-              <input
-                className="finished-button"
-                type="checkbox"
-                checked={this.state.finished}
-                onChange={this.handleFinish} />
-            ) : ("")}
             <input
               className={`${type}-name-input ${type}-form-input`}
               ref={(input) => { this.nameInput = input; }}
@@ -94,7 +87,14 @@ class CompForm extends React.Component {
               onChange={this.handleChange("name")}
               onBlur={this.handleOnBlur}
               placeholder={name}
-              value={this.state.name}></input>
+              value={this.state.name} />
+              { type === "task" && currId ? (
+                  <input
+                    className="finished-button"
+                    type="checkbox"
+                    checked={this.state.finished}
+                    onChange={this.handleFinish} />
+              ) : ("")}
           </form>
         </section>
     );

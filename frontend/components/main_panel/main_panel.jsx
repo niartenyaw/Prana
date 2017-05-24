@@ -5,27 +5,31 @@ import DashboardContainer from '../dashboard/dashboard_container';
 import TeamShowContainer from '../team/team_show_container';
 import ProjectShowContainer from '../project/project_show_container';
 
-
 class MainPanel extends React.Component {
-    render() {
-      return (
-        <div className="main-panel">
-          <div className="inner-panel">
-            <ProRoute path="/dashboard" component={DashboardContainer} />
-            <Switch>
-              <ProRoute exact path="/teams/new"
-                key="new" component={TeamShowContainer} />
-              <ProRoute path="/teams/:teamId"
-                key="edit" component={TeamShowContainer} />
-              <ProRoute exact path="/projects/new"
-                key="new" component={ProjectShowContainer} />
-              <ProRoute path="/projects/:projectId"
-                key="edit" component={ProjectShowContainer} />
-            </Switch>
-          </div>
+
+  componentWillMount() {
+    this.props.getAll();
+  }
+
+  render() {
+    return (
+      <div className="main-panel">
+        <div className="inner-panel">
+          <ProRoute path="/dashboard" component={DashboardContainer} />
+          <Switch>
+            <ProRoute exact path="/teams/new"
+              key="new" component={TeamShowContainer} />
+            <ProRoute path="/teams/:teamId"
+              key="edit" component={TeamShowContainer} />
+            <ProRoute exact path="/projects/new"
+              key="new" component={ProjectShowContainer} />
+            <ProRoute path="/projects/:projectId"
+              key="edit" component={ProjectShowContainer} />
+          </Switch>
         </div>
-      );
-    }
+      </div>
+    );
+  }
 }
 
 export default MainPanel;
