@@ -3,17 +3,16 @@ import { RECEIVE_TEAM,
   REMOVE_TEAM,
   RECEIVE_TEAM_ERRORS } from '../actions/team_actions';
 
+const nullTeam = {
+  name: "",
+  creator_id: 0
+};
+
 const nullTeams = {
   allTeams: {
-    0: {
-      name: "",
-      creator_id: 0
-    }
+    0: nullTeam
   },
-  current: {
-    name: "",
-    creator_id: 0
-  },
+  current: nullTeam,
   errors: []
 };
 

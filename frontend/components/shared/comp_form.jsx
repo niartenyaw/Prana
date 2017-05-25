@@ -35,23 +35,31 @@ class CompForm extends React.Component {
 
   handleOnBlur() {
     if (this.state.id) {
-      this.props.patchComp(this.state)
-        .fail(errors => {
-          this.setState({ name: this.props.current.name })
-        });
+      this.patch();
     }
     else {
-      this.props.postComp(this.state)
-        .then(resp => {
-          if (this.props.type === "task") {
-            const currUrl = this.props.match.url.split("/").slice(0,3).join("/");
-            this.props.history.push(`${currUrl}/tasks/${resp.task.id}`);
-          }
-          else {
-            this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
-          }
-        });
+      this.post();
     }
+  }
+
+  patch() {
+    this.props.patchComp(this.state)
+      .fail(() => {
+        this.setState({ name: this.props.current.name })
+      });
+  }
+
+  post() {
+    this.props.postComp(this.state)
+      .then(resp => {
+        if (this.props.type === "task") {
+          const currUrl = this.props.match.url.split("/").slice(0,3).join("/");
+          this.props.history.push(`${currUrl}/tasks/${resp.task.id}`);
+        }
+        else {
+          this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
+        }
+      });
   }
 
   handleKeyDown(type, input) {

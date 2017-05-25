@@ -36,7 +36,6 @@ const ProjectReducer = (state = nullProjects, action) => {
       return Object.assign(newState, {allProjects: action.projects});
 
     case RECEIVE_PROJECT:
-
       const addedToAllProjects = Object.assign(
         allProjects,
         { [action.current.id]: action.current }

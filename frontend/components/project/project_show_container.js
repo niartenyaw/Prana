@@ -12,7 +12,8 @@ const _empty = {
 };
 
 const mapStateToProps = (state, { match }) => {
-  const current = state.projects.allProjects[match.params.projectId] || _empty;
+
+  const current = state.projects.allProjects[match.params.projectId] || state.projects.allProjects[0];
 
   return {
     current,

@@ -12,11 +12,18 @@ class CompShow extends React.Component {
 
   componentWillMount() {
     this.props.receiveCurrent(this.props.current);
+
+    if (this.props.type === "project") {
+      this.props.receiveCurrentTeam(this.props.team);
+    }
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.current.id !== this.props.current.id) {
       this.props.receiveCurrent(newProps.current);
+      if (this.props.type === "project") {
+        this.props.receiveCurrentTeam(newProps.team);
+      }
     }
   }
 
