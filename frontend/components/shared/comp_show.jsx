@@ -65,7 +65,7 @@ class CompShow extends React.Component {
             )
           }
           {
-            this.props.match.path === `/${type}s/new` ? ("") : (
+            this.props.match.path === `/${type}s/new` || type === "user" ? ("") : (
               <div className="button-container">
                 <button
                   className="button"
