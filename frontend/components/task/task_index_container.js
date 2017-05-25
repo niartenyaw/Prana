@@ -35,6 +35,11 @@ const selectTasks = (type, params, state) => {
         state.session.currentUser.id,
         state.tasks.allTasks);
 
+    case "user":
+
+      return selectUserTasks(
+        params.userId,
+        state.tasks.allTasks);
   }
 };
 

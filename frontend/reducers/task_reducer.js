@@ -65,8 +65,6 @@ const TaskReducer = (state = _nullTasks, action) => {
 
     case RECEIVE_TASK_ERRORS:
 
-      console.log(action.errors);
-
       return Object.assign(newState, { errors: action.errors });
 
     default:

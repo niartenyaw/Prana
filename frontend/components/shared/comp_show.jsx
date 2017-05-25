@@ -57,7 +57,13 @@ class CompShow extends React.Component {
     const show = (
       <section className={`${type}-show`}>
         <div className={`${type}-header`}>
-          <CompFormContainer type={type} comp={this.props.current} />
+          {
+            type === "user" ? (
+              <h2>{`${this.props.current.name}'s Tasks`}</h2>
+            ) : (
+              <CompFormContainer type={type} comp={this.props.current} />
+            )
+          }
           {
             this.props.match.path === `/${type}s/new` ? ("") : (
               <div className="button-container">

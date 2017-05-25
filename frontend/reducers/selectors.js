@@ -81,7 +81,7 @@ export const selectUserTasks = (userId, tasks) => {
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (task.assignee_id === userId) {
+    if (task.assignee_id === Number(userId)) {
       if (task.finished) {
         selectedFinishedTasks.push(task);
       }
