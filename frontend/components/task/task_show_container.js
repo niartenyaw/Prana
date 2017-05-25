@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { patchTask, postTask } from '../../actions/task_actions';
+import { patchTask, postTask, deleteTask } from '../../actions/task_actions';
 import CompShow from '../shared/comp_show';
 import TaskFormContainer from './task_form_container';
 
@@ -18,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  receiveCurrent: () => {}
+  receiveCurrent: () => {},
+  deleteComp: id => dispatch(deleteTask(id))
 });
 
 export default withRouter(

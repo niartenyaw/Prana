@@ -24,13 +24,23 @@ class CompShow extends React.Component {
     const name = this.props.current.name
     if (confirm(`Are you sure you want to delete ${name}`)) {
       this.props.deleteComp(this.props.current.id)
-        .then(this.props.history.push("/dashboard"));
+        .then(() => {
+          if (this.props.type === "task") {
+            this.props.history.push(this.taskCloseUrl())
+          }
+          else {
+            this.props.history.push("/dashboard")
+          }
+        });
     }
   }
 
+  taskCloseUrl() {
+    return this.props.match.url.split("/").slice(0,3).join("/");
+  }
+
   handleTaskClose() {
-    const closeUrl = this.props.match.url.split("/").slice(0,3).join("/");
-    this.props.history.push(closeUrl);
+    this.props.history.push(this.taskCloseUrl());
   }
 
   render() {
