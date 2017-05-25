@@ -32,6 +32,8 @@ class MainPanel extends React.Component {
           component={TaskShowContainer} />
         <ProRoute exact path="/projects/:projectId/tasks/:taskId"
           component={TaskShowContainer} />
+        <ProRoute exact path="/dashboard/tasks/:taskId"
+            component={TaskShowContainer} />
       </div>
     );
   }

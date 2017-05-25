@@ -30,7 +30,6 @@ class CompShow extends React.Component {
   render() {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
-    console.log(this.props.errors);
 
     const show = (
       <section className={`${type}-show`}>
