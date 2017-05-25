@@ -5,7 +5,8 @@ import { RECEIVE_TEAM,
 
 const nullTeam = {
   name: "",
-  creator_id: 0
+  creator_id: 0,
+  id: 0
 };
 
 const nullTeams = {
@@ -34,9 +35,6 @@ const TeamReducer = (state = nullTeams, action) => {
 
     case RECEIVE_TEAM:
 
-      if (allTeams[undefined]) {
-        delete allTeams[undefined];
-      }
       const addToAllTeams = { allTeams: Object.assign(
         allTeams,
         { [action.current.id] : action.current})

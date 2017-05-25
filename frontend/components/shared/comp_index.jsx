@@ -8,10 +8,6 @@ class CompIndex extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.getAllComps();
-  }
-
   render() {
     const CompIndexItemContainer = this.props.CompIndexItemContainer;
     const type = this.props.type;

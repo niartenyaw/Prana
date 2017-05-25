@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import CompIndex from '../shared/comp_index';
 import TaskIndexItemContainer from './task_index_item_container';
-import { getAllTasks } from '../../actions/task_actions';
 import {
   selectProjectTasks,
   selectTeamTasks,
@@ -45,13 +44,9 @@ const mapStateToProps = (state, ownProps) => ({
   type: 'task'
 });
 
-const mapDispatchToProps = dispatch => ({
-  getAllComps: () => dispatch(getAllTasks())
-});
-
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
   )(CompIndex)
 );

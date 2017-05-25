@@ -6,18 +6,14 @@ import { getAllUsers } from '../../actions/user_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => ({
-  allComps: asArray(state.teams.allTeams),
-  CompIndexItemContainer: TeamIndexItemContainer,
-  type: "team"
-});
-
-const mapDispatchToProps = dispatch => ({
-  getAllComps: () => dispatch(getAllTeams())
+  allComps: asArray(state.users.allUsers),
+  CompIndexItemContainer: UserIndexItemContainer,
+  type: "user"
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
   )(CompIndex)
 );
