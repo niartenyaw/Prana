@@ -7,6 +7,7 @@ class CompShow extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleTaskClose = this.handleTaskClose.bind(this);
   }
 
   componentWillMount() {
@@ -27,6 +28,11 @@ class CompShow extends React.Component {
     }
   }
 
+  handleTaskClose() {
+    const closeUrl = this.props.match.url.split("/").slice(0,3).join("/");
+    this.props.history.push(closeUrl);
+  }
+
   render() {
     const CompFormContainer = this.props.form;
     const type = this.props.type;
@@ -43,6 +49,13 @@ class CompShow extends React.Component {
                   onClick={this.handleClick}>Delete</button>
               </div>
             )
+          }
+          {
+            type === "taskdetail" ? (
+              <div className="taskdetail-close-button">
+                <button onClick={this.handleTaskClose}>X</button>
+              </div>
+            ) : ("")
           }
         </div>
         <div className="errors-container">
