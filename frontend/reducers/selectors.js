@@ -22,15 +22,21 @@ export const selectTeamProjects = (teamId, projects) => {
 export const selectProjectTasks = (projectId, tasks) => {
   tasks = asArray(tasks);
   const selectedTasks = [];
+  const selectedFinishedTasks = [];
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (!task.finished && task["project_id"] === Number(projectId)) {
-      selectedTasks.push(task);
+    if (task["project_id"] === Number(projectId)) {
+      if (task.finished) {
+        selectedFinishedTasks.push(task);
+      }
+      else {
+        selectedTasks.push(task);
+      }
     }
   }
 
-  return selectedTasks;
+  return selectedTasks.concat(selectedFinishedTasks);
 };
 
 
@@ -50,28 +56,40 @@ export const selectTeamTasks = (teamId, projects, tasks) => {
   tasks = asArray(tasks);
 
   const selectedTasks = [];
+  const selectedFinishedTasks = [];
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (!task.finished && teamProjectIds.includes(task.project_id)) {
-      selectedTasks.push(task);
+    if (teamProjectIds.includes(task.project_id)) {
+      if (task.finished) {
+        selectedFinishedTasks.push(task);
+      }
+      else {
+        selectedTasks.push(task);
+      }
     }
   }
 
-  return selectedTasks;
+  return selectedTasks.concat(selectedFinishedTasks);
 };
 
 export const selectUserTasks = (userId, tasks) => {
   tasks = asArray(tasks);
 
   const selectedTasks = [];
+  const selectedFinishedTasks = [];
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (!task.finished && task.assignee_id === userId) {
-      selectedTasks.push(task);
+    if (task.assignee_id === userId) {
+      if (task.finished) {
+        selectedFinishedTasks.push(task);
+      }
+      else {
+        selectedTasks.push(task);
+      }
     }
   }
 
-  return selectedTasks;
+  return selectedTasks.concat(selectedFinishedTasks);
 };

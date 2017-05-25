@@ -76,7 +76,7 @@ class CompForm extends React.Component {
   }
 
   handleFinish(e) {
-    this.setState({ finished: true }, () => this.handleOnBlur())
+    this.setState({ finished: !this.props.current.finished }, () => this.handleOnBlur())
   }
 
   render() {
@@ -89,8 +89,14 @@ class CompForm extends React.Component {
     const type = this.props.type;
     const currId = this.props.current.id;
 
+    let crossout = "";
+
+    if (type === "task") {
+      crossout = `task-${this.props.current.finished}`;
+    }
+
     return (
-        <section className={`${type}-form-container`}>
+        <section className={`${type}-form-container ${crossout}`}>
           <form
             className={`${type}-form`}
             key={currId}
