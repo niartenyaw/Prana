@@ -11,6 +11,14 @@
     ul {
       .task-index-item {
         margin: -1px 0;
+
+        .task-true {
+          .task-name-input {
+            text-decoration: line-through;
+            color: $gray;
+          }
+        }
+
         .task-form-header {
           border-top: 1px solid $gray;
           border-bottom: 1px solid $gray;
