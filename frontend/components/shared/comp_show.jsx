@@ -52,8 +52,10 @@ class CompShow extends React.Component {
           }
           {
             type === "taskdetail" ? (
-              <div className="taskdetail-close-button">
-                <button onClick={this.handleTaskClose}>X</button>
+              <div className="taskdetail-close-button-container">
+                <button
+                  className="taskdetail-close-button"
+                  onClick={this.handleTaskClose}><img src="https://res.cloudinary.com/dbxwu45pr/image/upload/v1495732364/close-cross_wv6b1w.png" alt="close-symbol" /></button>
               </div>
             ) : ("")
           }
