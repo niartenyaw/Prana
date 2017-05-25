@@ -10,21 +10,26 @@ class User < ApplicationRecord
 
   # Teams
   has_many :created_teams,
+    dependent: :destroy,
     foreign_key: :creator_id,
     class_name: :Team
 
-  has_many :team_memberships
+  has_many :team_memberships,
+    dependent: :destroy
 
   has_many :teams,
+    dependent: :destroy,
     through: :team_memberships,
     source: :team
 
   #Projects
   has_many :created_projects,
+    dependent: :destroy,
     foreign_key: :creator_id,
     class_name: :Project
 
-  has_many :project_memberships
+  has_many :project_memberships,
+    dependent: :destroy
 
   has_many :projects,
     through: :project_memberships,
@@ -32,10 +37,12 @@ class User < ApplicationRecord
 
   # Tasks
   has_many :created_tasks,
+    dependent: :destroy,
     foreign_key: :creator_id,
     class_name: :Task
 
   has_many :assigned_tasks,
+    dependent: :destroy,
     foreign_key: :assignee_id,
     class_name: :Task
 

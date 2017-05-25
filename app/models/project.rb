@@ -10,13 +10,15 @@ class Project < ApplicationRecord
     foreign_key: :creator_id,
     class_name: :User
 
-  has_many :project_memberships
+  has_many :project_memberships,
+    dependent: :destroy
 
   has_many :project_members,
     through: :project_memberships,
     source: :user
 
   # Tasks
-  has_many :tasks
+  has_many :tasks,
+    dependent: :destroy
 
 end

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.team-show, .project-show {
+.team-show, .project-show, .dashboard {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,8 +12,6 @@
 .taskdetail-header {
   align-items: flex-start;
 }
-
-
 
 .team-header, .project-header, .taskdetail-header {
   width: 100%;

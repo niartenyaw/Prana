@@ -25,7 +25,7 @@ class CompShow extends React.Component {
     if (confirm(`Are you sure you want to delete ${name}`)) {
       this.props.deleteComp(this.props.current.id)
         .then(() => {
-          if (this.props.type === "task") {
+          if (this.props.type === "taskdetail") {
             this.props.history.push(this.taskCloseUrl())
           }
           else {
