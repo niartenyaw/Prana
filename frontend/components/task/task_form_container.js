@@ -4,7 +4,8 @@ import { postTask, patchTask, receiveTaskErrors } from '../../actions/task_actio
 import CompForm from '../shared/comp_form';
 
 const _empty = {
-  name: ""
+  name: "",
+  description: ""
 };
 
 const mapStateToProps = (state, ownProps) => {

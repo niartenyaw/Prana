@@ -44,7 +44,11 @@ class CompForm extends React.Component {
     else {
       this.props.postComp(this.state)
         .then(resp => {
-          if (this.props.type !== "task") {
+          if (this.props.type === "task") {
+            const currUrl = this.props.match.url.split("/").slice(0,3).join("/");
+            this.props.history.push(`${currUrl}/tasks/${resp.task.id}`);
+          }
+          else {
             this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
           }
         },
