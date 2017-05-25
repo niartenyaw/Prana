@@ -46,8 +46,8 @@
 
     .team-form-input:focus, .project-form-input:focus, .taskdetail-form-input:focus {
       outline: none;
-      border-top: 3px solid $medium-blue;
-      border-bottom: 3px solid $medium-blue;
+      border-top: 3px solid $medium-purple;
+      border-bottom: 3px solid $medium-purple;
     }
 
     .team-name-input, .project-name-input, .taskdetail-name-input {
@@ -73,7 +73,7 @@
 
     .taskdetail-description-input:focus {
       outline: none;
-      border: 2px solid $medium-blue;
+      border: 2px solid $medium-purple;
     }
   }
 
@@ -88,7 +88,7 @@
 
 .errors-container {
   width: 100%;
-  color: $dark-blue;
+  color: $dark-purple;
   .errors-list {
     padding-left: 20px;
     list-style: circle;

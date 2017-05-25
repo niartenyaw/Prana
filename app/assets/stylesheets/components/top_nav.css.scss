@@ -29,7 +29,7 @@
     font-family: $title-primary, $title-secondary;
     font-weight: normal;
     font-size: 40px;
-    color: $dark-blue;
+    color: $dark-purple;
   }
 
   img#nav-logo {
@@ -58,12 +58,12 @@
 
   border-radius: 10px;
   padding: 10px 15px;
-  background-color: $medium-blue;
+  background-color: $medium-purple;
   color: white;
 }
 
 .button:hover, .session-links a:hover {
-  background-color: $dark-blue;
+  background-color: $dark-purple;
   cursor: pointer;
 
   transform: color .4s ease-out,border-color .4s ease-out;
