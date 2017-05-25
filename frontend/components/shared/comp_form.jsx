@@ -37,8 +37,7 @@ class CompForm extends React.Component {
     if (this.state.id) {
       this.props.patchComp(this.state)
         .fail(errors => {
-          this.props.receiveErrors(errors.responseJSON);
-          this.setState()
+          this.setState({ name: this.props.current.name })
         });
     }
     else {
@@ -51,8 +50,7 @@ class CompForm extends React.Component {
           else {
             this.props.history.push(`/${this.props.type}s/${resp.current.id}`);
           }
-        },
-          errors => this.props.receiveErrors(errors.responseJSON));
+        });
     }
   }
 

@@ -9,6 +9,7 @@ const _empty = {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  
   const current = ownProps.comp || Object.assign(
     _empty,
     { project_id: ownProps.projectId }

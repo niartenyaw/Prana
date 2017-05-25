@@ -30,7 +30,10 @@ const TaskReducer = (state = _nullTasks, action) => {
 
     case RECEIVE_TASKS:
 
-      return Object.assign(newState, {allTasks: action.tasks});
+      return Object.assign(
+        {},
+        newState,
+        { allTasks: action.tasks });
 
     case RECEIVE_TASK:
 
@@ -61,6 +64,8 @@ const TaskReducer = (state = _nullTasks, action) => {
       };
 
     case RECEIVE_TASK_ERRORS:
+
+      console.log(action.errors);
 
       return Object.assign(newState, { errors: action.errors });
 
