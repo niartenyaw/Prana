@@ -73,9 +73,9 @@ class SessionForm extends React.Component {
 
           <div className="submit-buttons">
 
+            <input className="button" type="submit" value={text} />
             <button className="button"
               onClick={(e) => this.handleGuestSignin(e)} >Guest Sign In</button>
-            <input className="button" type="submit" value={text} />
 
           </div>
 
