@@ -35,9 +35,15 @@ const TeamReducer = (state = nullTeams, action) => {
 
     case RECEIVE_TEAM:
 
+      if (allTeams[undefined]) {
+        delete allTeams[undefined];
+      }
+
+      let id = action.current.id || 0;
+
       const addToAllTeams = { allTeams: Object.assign(
         allTeams,
-        { [action.current.id] : action.current})
+        { [id] : action.current})
       };
 
       return Object.assign(

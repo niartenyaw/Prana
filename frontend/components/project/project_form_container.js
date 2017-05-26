@@ -4,7 +4,9 @@ import { postProject, patchProject, receiveProjectErrors } from '../../actions/p
 import CompForm from '../shared/comp_form';
 
 const _empty = {
-  name: ""
+  name: "",
+  creator_id: 0,
+  team_id: 0
 };
 
 const mapStateToProps = (state, ownProps) => {

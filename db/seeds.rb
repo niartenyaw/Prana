@@ -8,11 +8,8 @@
 
 user1 = User.create(email: "guest@guest.com", name: "guest", password:"password")
 user2 = User.create(email: "guest2@guest.com", name: "Felton Yohe", password:"password")
-user3 = User.create(email: "guest3@guest.com", name: "Karlene Ferdinand", password:"password")
-user4 = User.create(email: "guest4@guest.com", name: "Blair Marrinan", password:"password")
-user5 = User.create(email: "guest5@guest.com", name: "Stephan Sarcone", password:"password")
-user6 = User.create(email: "guest6@guest.com", name: "Nina Paetzold", password:"password")
-
+user3 = User.create(email: "guest3@guest.com", name: "Nina Paetzold", password:"password")
+user4 = User.create(email: "guest4@guest.com", name: "Stephen Sarcone", password:"password")
 
 team1 = Team.create(creator_id: user1.id, name: "Engineering")
 team2 = Team.create(creator_id: user1.id, name: "Sales")
@@ -31,11 +28,6 @@ tmem5 = TeamMembership.create(user_id: user3.id, team_id: team3.id)
 tmem5 = TeamMembership.create(user_id: user4.id, team_id: team1.id)
 tmem5 = TeamMembership.create(user_id: user4.id, team_id: team2.id)
 tmem5 = TeamMembership.create(user_id: user4.id, team_id: team3.id)
-
-tmem5 = TeamMembership.create(user_id: user5.id, team_id: team1.id)
-tmem5 = TeamMembership.create(user_id: user5.id, team_id: team2.id)
-
-tmem5 = TeamMembership.create(user_id: user6.id, team_id: team1.id)
 
 
 project1 = Project.create(name: "Develop New Product", creator_id: user1.id, team_id: team1.id)

@@ -12,15 +12,14 @@ const _empty = {
 };
 
 const mapStateToProps = (state, { match }) => {
-
-  const current = state.projects.allProjects[match.params.projectId] || state.projects.allProjects[0];
+  const current = state.projects.allProjects[match.params.projectId] || _empty;
 
   return {
     current,
     errors: state.projects.errors,
     type: "project",
     form: ProjectFormContainer,
-    team: state.teams.allTeams[current.team_id]
+    team: state.teams.current
   };
 };
 
