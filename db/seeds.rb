@@ -38,11 +38,11 @@ tmem5 = TeamMembership.create(user_id: user5.id, team_id: team2.id)
 tmem5 = TeamMembership.create(user_id: user6.id, team_id: team1.id)
 
 
-project1 = Project.create(name: "Cascade Product Launch", creator_id: user1.id, team_id: team2.id)
-project2 = Project.create(name: "Create Firefly Product Line", creator_id: user1.id, team_id: team1.id)
-project3 = Project.create(name: "China Factory", creator_id: user1.id, team_id: team3.id)
-project4 = Project.create(name: "US Factory", creator_id: user1.id, team_id: team2.id)
-project5 = Project.create(name: "", creator_id: user1.id, team_id: team3.id)
+project1 = Project.create(name: "Develop New Product", creator_id: user1.id, team_id: team1.id)
+project2 = Project.create(name: "New Hires", creator_id: user1.id, team_id: team1.id)
+project3 = Project.create(name: "Product Launch Material", creator_id: user1.id, team_id: team2.id)
+project4 = Project.create(name: "China Factory", creator_id: user1.id, team_id: team3.id)
+project5 = Project.create(name: "Product Production Pipeline", creator_id: user1.id, team_id: team3.id)
 
 
 pmem1 = ProjectMembership.create(user_id: user1.id, project_id: project1.id)
@@ -52,73 +52,213 @@ pmem1 = ProjectMembership.create(user_id: user1.id, project_id: project4.id)
 pmem1 = ProjectMembership.create(user_id: user1.id, project_id: project5.id)
 
 
+# Project 1 - Eng - Develop New Product
 task1 = Task.create(
   creator_id: user1.id,
   project_id: project1.id,
-  name: "Set Goals",
-  description: "The wisest and greatest of marketers set goals. If you run a campaign without goals, who's to say it was successful? Having goals in place for your marketing efforts will help you define success.")
+  name: "Kick-off workshop",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Product concept design",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Feasibility analysis",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Product timeline creation",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Functional testing",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Performance testing",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Prepare support documentation",
+  description: "Documentation for use by the sales team"
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Field deployment",
+  description: "Work with clients for product onboarding"
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project1.id,
+  name: "Measure tolerances for new components",
+  description: ""
+)
+
+# Project 2 - Eng - New Hires
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Schedule interview time slots",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Review resumes",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Post to job boards",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Initial phone screenings",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Send offer letters",
+  description: ""
+)
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project2.id,
+  name: "Prepare training materials",
+  description: ""
+)
+
+
+# Project 3 - Sales - Product Launch Material
+task1 = Task.create(
+  creator_id: user1.id,
+  project_id: project3.id,
+  name: "Create Google Ads Content",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user2.id,
-  project_id: project1.id,
-  name: "Study the Competition",
-  description: "Don’t market in the dark. Find out who your competition is and look at what they are doing. There is no shame in it. Marketers should want to know what their competition is up to and where their own marketing efforts fall in comparison.")
+  project_id: project3.id,
+  name: "Review Competitor Materials",
+  description: "."
+)
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project1.id,
-  name: "Address the Target Audience",
-  description: "This may seem obvious but you would be surprised how many companies out there don’t address their target audience properly. As a marketer you need to identify who your target audience is. You can do this by creating a marketing persona / buyer persona.")
+  project_id: project3.id,
+  name: "Finalize Target Audience",
+  description: "Meeting on Thursday."
+)
 task2 = Task.create(
   creator_id: user2.id,
-  project_id: project1.id,
-  name: "Create Content",
-  description: "I know you have heard it all before. You need to create blog posts, ebooks, pdfs, memes, infographics, webinars, slide decks... the list goes on and on. There is a ton of content types to dabble in and a great marketer dabbles often.")
+  project_id: project3.id,
+  name: "Create Website Content",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project1.id,
-  name: "Nurture",
-  description: "Building a relationship with prospects and leads is something that occurs daily. It starts from the moment they come across your brand on the Internet. From this point, a relationship has begun.\n\nMarketers nurture relationships with automated emails. A series of emails can be sent to build on a lead’s interests by providing them with additional relevant content you think they may enjoy.")
+  project_id: project3.id,
+  name: "Review TV advertisement",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project1.id,
-  name: "Social Listening",
-  description: "Listening to what is being said about your brand and industry across social media is important. Lots of opportunities can be missed if you are not listening.")
+  project_id: project3.id,
+  name: "Market fit testing",
+  description: "Meeting with consumers every Monday."
+)
 task2 = Task.create(
   creator_id: user3.id,
-  project_id: project1.id,
-  name: "Segment",
-  description: "Everyone in your contact database is different. A great marketer will find out what makes them different by asking the right questions.")
+  project_id: project3.id,
+  name: "Segment email lists",
+  description: "Techies, marketers, stay at home parents"
+)
+
+
+# Project 4 - Ops - China Factory
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project1.id,
-  name: "Test",
-  description: "In my opinion this is the best part of marketing. Testing different items across the campaigns you run will help you to understand what works and what doesn’t work.")
-task2 = Task.create(
-  creator_id: user3.id,
-  project_id: project1.id,
-  name: "Measure and Analyze",
-  description: "Always be looking at the numbers and measure everything. A great marketer measures the performance of their campaigns. When you are done measuring, you analyze.")
+  project_id: project4.id,
+  name: "Automate information flow to/from factory",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project1.id,
-  name: "Innovate",
-  description: "Of course it is a marketer’s job to be creative but you should always be looking to separate yourself from the competition. Be innovative in your marketing by trying new things and putting new ideas into motion.\n\nThere are all sorts of trends and fads that pass through the marketing world, so don't be afraid to start one!")
-task2 = Task.create(
-  creator_id: user3.id,
-  project_id: project2.id,
-  name: "Hack into the Mainframe",
-  description: "Hack all the files")
+  project_id: project4.id,
+  name: "Factory inspection",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user1.id,
-  project_id: project2.id,
-  name: "Automate the process",
-  description: "All the processes")
+  project_id: project4.id,
+  name: "Find new delivery service from factory",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user1.id,
+  project_id: project4.id,
+  name: "Monitor line workers",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user1.id,
+  project_id: project4.id,
+  name: "Final production test run",
+  description: ""
+)
+
+
+# Project 5 - Ops - Product Production Pipeline
 task2 = Task.create(
   creator_id: user3.id,
-  project_id: project2.id,
-  name: "Create feasibility reports",
-  description: "All the reports")
+  project_id: project5.id,
+  name: "Final decision for national warehouse",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user3.id,
+  project_id: project5.id,
+  name: "Source initial parts for new product",
+  description: ""
+)
 task2 = Task.create(
   creator_id: user4.id,
-  project_id: project2.id,
-  name: "Maintain field units",
-  description: "All the field units")
+  project_id: project5.id,
+  name: "Review delivery reports",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user4.id,
+  project_id: project5.id,
+  name: "Discuss material requirements with engineers",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user4.id,
+  project_id: project5.id,
+  name: "Negotiate deal with FedEx or UPS",
+  description: ""
+)
+task2 = Task.create(
+  creator_id: user4.id,
+  project_id: project5.id,
+  name: "Test customer shipping pipeline from warehouse",
+  description: ""
+)
