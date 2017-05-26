@@ -23,9 +23,9 @@ class CompForm extends React.Component {
     this.setState(newProps.current);
   }
 
-  handleChange(type) {
+  handleChange(inputType) {
     return e => {
-      this.setState({ [type]: e.target.value });
+      this.setState({ [inputType]: e.target.value });
     };
   }
 
