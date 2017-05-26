@@ -43,7 +43,13 @@ class CompShow extends React.Component {
   }
 
   taskCloseUrl() {
-    return this.props.match.url.split("/").slice(0,3).join("/");
+    const path = this.props.match.url.split("/");
+    if (path.includes("dashboard")) {
+      return path.slice(0,2).join("/");
+    }
+    else {
+      return path.slice(0,3).join("/");
+    }
   }
 
   handleTaskClose() {
