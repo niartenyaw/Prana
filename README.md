@@ -6,63 +6,10 @@ Prana is a clone of the popular task management website [Asana](https://www.asan
 
 ## Features
 
-### User Authentication
-
-Prana's user authentication uses the `BCrypt` gem. Users are required to enter a sufficient email address and password in order to sign up.
-
-### Teams and Projects
-
-##### Create a new Team
-
-Click the plus button next to the teams header in the side nav bar and type in the name. Press `Enter` or click out of the input field to save. Or press `Esc` to cancel.
-
-![Image]()
-
-##### Create a new Project
-
-After creating a team, a project header will appear in the side nav. Select the correct team for your project. Then, click the `+` button next to the projects header. Add a project to that team!
-
-![Image]()
-
-##### Edit a Team or Project name
-
-Select it from the side nav and click on its name in the main panel. Edit away! Press `Esc` to cancel the edit.
-
-![Image]()
-
-##### Delete a Team or Project
-
-Select the team or project to be deleted. In the main panel, click the `Delete` button next to the name. Confirm that you want to delete it!
-
-_Note: Be careful! Deleting a team will delete all associated projects and tasks. Deleting a project will delete associated tasks._
-
-![Image]()
-
-### Tasks
-
-Now the fun begins!
-
-##### Create a new Task!
-
-Select the project for the task. Click on the "new task" section and type away! Press `Enter` or click out of the input field to save.
-
-![Image]()
-
-##### Add details to a Task
-
-After creating a new task, a task details panel will appear on the right side of the main panel. Click on the title or description to edit them. To view details of an existing task, click on the task from the team or project panel.
-
-![Image]()
-
-##### Complete a Task
-
-To mark a Task as complete, click the check icon next to the task title in the list or detail view. It will strike out that task and move it to the bottom of any task list. If you want to change a completed task to incomplete again, simply uncheck that same icon.
-
-![image]()
-
-##### Delete a Task
-
-Click on the task to delete. In the task details panel, click on the `Delete` button next to its title. Confirm that you want to delete it!
+* User Authentication
+  * Prana's user authentication uses the `BCrypt` gem
+* Team, Project, and Task CRUD
+* Live forms for presentation
 
 ## Implementation
 
@@ -132,7 +79,7 @@ Below is a snippet of the shared form. All three `type`s share a name input whil
 </form>
 ```
 
-Duck-typing functions in the containers (`postComp`, `patchComp`) and conditionals handle the differences in `type`s and actions to be taken.
+Duck-typed functions from the containers (`postComp`, `patchComp`) and conditionals handle the differences in `type`s and actions to be taken.
 
 ```javascript
 handleOnBlur() {
