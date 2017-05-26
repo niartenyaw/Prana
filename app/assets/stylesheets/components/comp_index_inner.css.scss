@@ -6,9 +6,12 @@
   align-items: flex-start;
 
   .task-index {
-    width: 93.2%;
-    padding: 0 10px;
+    width: 100%;
     ul {
+      padding: 2px;
+      padding-right: 5px;
+      max-height: 67vh;
+      overflow-y: scroll;
       .task-index-item {
         margin: -1px 0;
 
